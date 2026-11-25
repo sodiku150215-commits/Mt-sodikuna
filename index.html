@@ -624,12 +624,10 @@
         <!-- Bottom Quote Card Banner: full photo background slideshow -->
         <div class="px-5 mt-5">
           <div class="relative rounded-[22px] p-5 text-white shadow-[0_10px_22px_-6px_rgba(13,92,171,0.45)] overflow-hidden min-h-[230px]">
-            <div id="sodikuna-photo-slider" class="absolute inset-0 z-0" aria-label="Foto latar Majelis Ta'lim Sodikuna">
-              <img src="./foto-sodikuna-1.jpg" alt="Foto Sodikuna 1" class="sodikuna-slide absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-700" />
-              <img src="./foto-sodikuna-2.jpg" alt="Foto Sodikuna 2" class="sodikuna-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700" />
-              <img src="./foto-sodikuna-3.jpg" alt="Foto Sodikuna 3" class="sodikuna-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700" />
+            <div id="sodikuna-photo-slider" style="position:absolute;inset:0;z-index:0;overflow:hidden;" aria-label="Foto latar Majelis Ta'lim Sodikuna">
+              <img id="sodikuna-slider-image" src="./foto-sodikuna-1.jpg" alt="Foto latar Sodikuna" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;transition:opacity 700ms ease;" />
             </div>
-            <div class="absolute inset-0 z-[1] bg-gradient-to-r from-[#063b76]/35 via-[#075ba5]/20 to-[#06447a]/10 pointer-events-none"></div>
+            <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(6,59,118,.35),rgba(7,91,165,.20),rgba(6,68,122,.10));pointer-events:none;"></div>
             <div class="relative z-10 w-full pr-1">
               <svg class="w-8 h-8 text-white mb-1 drop-shadow-sm" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z" />
@@ -645,9 +643,9 @@
               </p>
             </div>
             <div class="absolute z-20 bottom-2.5 left-0 right-0 flex justify-center items-center gap-1.5" aria-label="Indikator foto">
-              <span class="sodikuna-slide-dot w-1.5 h-1.5 rounded-full bg-white"></span>
-              <span class="sodikuna-slide-dot w-1.5 h-1.5 rounded-full bg-white/50"></span>
-              <span class="sodikuna-slide-dot w-1.5 h-1.5 rounded-full bg-white/50"></span>
+              <span class="sodikuna-slide-dot" style="width:6px;height:6px;border-radius:999px;background:white;opacity:1;"></span>
+              <span class="sodikuna-slide-dot" style="width:6px;height:6px;border-radius:999px;background:white;opacity:.5;"></span>
+              <span class="sodikuna-slide-dot" style="width:6px;height:6px;border-radius:999px;background:white;opacity:.5;"></span>
             </div>
           </div>
         </div>
@@ -1149,18 +1147,21 @@
       }, 2400);
     }
 
-    // Compact photo slider: fade every 4.5 seconds
+    // Quote photo slideshow: switch one background image at a time with fade
     (function initSodikunaSlider(){
-      const slides=document.querySelectorAll('#sodikuna-photo-slider .sodikuna-slide');
-      const dots=document.querySelectorAll('#sodikuna-photo-slider .sodikuna-slide-dot');
-      if(!slides.length)return;
+      const image=document.getElementById('sodikuna-slider-image');
+      const dots=document.querySelectorAll('#sodikuna-photo-slider + div + div .sodikuna-slide-dot, .sodikuna-slide-dot');
+      if(!image)return;
+      const photos=['./foto-sodikuna-1.jpg','./foto-sodikuna-2.jpg','./foto-sodikuna-3.jpg'];
       let active=0;
       setInterval(()=>{
-        slides[active].classList.remove('opacity-100');slides[active].classList.add('opacity-0');
-        dots[active].classList.remove('bg-white');dots[active].classList.add('bg-white/50');
-        active=(active+1)%slides.length;
-        slides[active].classList.remove('opacity-0');slides[active].classList.add('opacity-100');
-        dots[active].classList.remove('bg-white/50');dots[active].classList.add('bg-white');
+        image.style.opacity='0';
+        setTimeout(()=>{
+          active=(active+1)%photos.length;
+          image.src=photos[active];
+          image.onload=()=>{image.style.opacity='1';};
+          dots.forEach((dot,i)=>dot.style.opacity=i===active?'1':'.5');
+        },750);
       },4500);
     })();
 
