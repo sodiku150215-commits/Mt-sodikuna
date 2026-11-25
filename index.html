@@ -624,12 +624,12 @@
         <!-- Bottom Quote Card Banner: full photo background slideshow -->
         <div class="px-5 mt-5">
           <div class="relative rounded-[22px] p-5 text-white shadow-[0_10px_22px_-6px_rgba(13,92,171,0.45)] overflow-hidden min-h-[230px]">
-            <div id="sodikuna-photo-slider" style="position:absolute;inset:0;z-index:0;overflow:hidden;" aria-label="Foto latar Majelis Ta'lim Sodikuna">
-              <img id="sodikuna-slider-a" src="./foto-sodikuna-1.jpg" alt="Foto latar Sodikuna" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;transition:opacity 1100ms ease-in-out;" />
-              <img id="sodikuna-slider-b" src="./foto-sodikuna-1.jpg" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1100ms ease-in-out;" />
+            <div id="sodikuna-photo-slider" style="position:absolute;inset:0;z-index:2;overflow:hidden;" aria-label="Foto latar Majelis Ta'lim Sodikuna">
+              <img id="sodikuna-slider-a" src="./foto-sodikuna-1.jpg" alt="Foto latar Sodikuna" loading="eager" decoding="async" style="position:absolute;top:0;left:0;z-index:2;width:100%;height:100%;object-fit:cover;opacity:1;transition:opacity 1100ms ease-in-out;" />
+              <img id="sodikuna-slider-b" src="./foto-sodikuna-1.jpg" alt="" aria-hidden="true" loading="eager" decoding="async" style="position:absolute;top:0;left:0;z-index:3;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1100ms ease-in-out;" />
             </div>
-            <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(6,59,118,.28),rgba(7,91,165,.14),rgba(6,68,122,.08));pointer-events:none;"></div>
-            <div class="relative z-10 w-full pr-1">
+            <div style="position:absolute;top:0;right:0;bottom:0;left:0;z-index:4;background:linear-gradient(90deg,rgba(6,59,118,.20),rgba(7,91,165,.10),rgba(6,68,122,.05));pointer-events:none;"></div>
+            <div class="relative z-10 w-full pr-1" style="position:relative;z-index:5;">
               <svg class="w-8 h-8 text-white mb-1 drop-shadow-sm" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z" />
               </svg>
@@ -643,7 +643,7 @@
                 Ketaqwaan.”
               </p>
             </div>
-            <div class="absolute z-20 bottom-2.5 left-0 right-0 flex justify-center items-center gap-1.5" aria-label="Indikator foto">
+            <div class="absolute z-20 bottom-2.5 left-0 right-0 flex justify-center items-center gap-1.5" style="z-index:6;" aria-label="Indikator foto">
               <span class="sodikuna-slide-dot" style="width:6px;height:6px;border-radius:999px;background:white;opacity:1;"></span>
               <span class="sodikuna-slide-dot" style="width:6px;height:6px;border-radius:999px;background:white;opacity:.5;"></span>
               <span class="sodikuna-slide-dot" style="width:6px;height:6px;border-radius:999px;background:white;opacity:.5;"></span>
