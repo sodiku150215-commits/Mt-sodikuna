@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Majelis Ta’lim Sodikuna - Caringin Sukabumi</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Plus Jakarta Sans & Amiri (for Arabic) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #dbe4ef;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .font-arabic {
+      font-family: 'Amiri', serif;
+    }
+
+    /* Pixel-Accurate 3D Glossy / Claymorphism Card Styles */
+    .card-3d-blue {
+      background: linear-gradient(155deg, #2794f8 0%, #0d74d1 52%, #0856a8 100%);
+      box-shadow: 0 12px 20px -5px rgba(8, 86, 168, 0.45),
+                  inset 0 2.5px 4px rgba(255, 255, 255, 0.55),
+                  inset 0 -5px 8px rgba(5, 49, 102, 0.55);
+    }
+    .card-3d-purple {
+      background: linear-gradient(155deg, #9d65fa 0%, #7e3af2 52%, #5b21b6 100%);
+      box-shadow: 0 12px 20px -5px rgba(91, 33, 182, 0.42),
+                  inset 0 2.5px 4px rgba(255, 255, 255, 0.55),
+                  inset 0 -5px 8px rgba(59, 16, 130, 0.55);
+    }
+    .card-3d-green {
+      background: linear-gradient(155deg, #24c265 0%, #16a34a 52%, #0d7a38 100%);
+      box-shadow: 0 12px 20px -5px rgba(13, 122, 56, 0.42),
+                  inset 0 2.5px 4px rgba(255, 255, 255, 0.52),
+                  inset 0 -5px 8px rgba(6, 74, 33, 0.55);
+    }
+    .card-3d-lightblue {
+      background: linear-gradient(155deg, #b8dcfe 0%, #8ec5fc 55%, #60a5fa 100%);
+      box-shadow: 0 10px 18px -5px rgba(96, 165, 250, 0.48),
+                  inset 0 2.5px 4px rgba(255, 255, 255, 0.85),
+                  inset 0 -5px 8px rgba(59, 130, 246, 0.42);
+    }
+    .card-3d-periwinkle {
+      background: linear-gradient(155deg, #e0e7ff 0%, #c7d2fe 55%, #a5b4fc 100%);
+      box-shadow: 0 10px 18px -5px rgba(148, 163, 214, 0.48),
+                  inset 0 2.5px 4px rgba(255, 255, 255, 0.9),
+                  inset 0 -5px 8px rgba(129, 140, 248, 0.38);
+    }
+    .card-3d-mint {
+      background: linear-gradient(155deg, #a7f3d0 0%, #6ee7b7 55%, #34d399 100%);
+      box-shadow: 0 10px 18px -5px rgba(52, 211, 153, 0.45),
+                  inset 0 2.5px 4px rgba(255, 255, 255, 0.85),
+                  inset 0 -5px 8px rgba(16, 185, 129, 0.4);
+    }
+
+    .menu-btn {
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.2s ease;
+    }
+    .menu-btn:hover {
+      transform: translateY(-3px) scale(1.025);
+      filter: brightness(1.04);
+    }
+    .menu-btn:active {
+      transform: scale(0.95);
+    }
+
+    /* Hide scrollbar for clean mobile feel */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    @keyframes fadeSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-view {
+      animation: fadeSlideUp 0.28s ease-out forwards;
+    }
+  
+#pwa-splash{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;flex-direction:column;background:radial-gradient(circle at 50% 25%,#2493ff 0%,#0758ba 42%,#052f70 100%);color:white;transition:opacity .45s ease,visibility .45s ease}#pwa-splash.hide{opacity:0;visibility:hidden;pointer-events:none}#pwa-splash img{width:min(42vw,190px);max-width:190px;filter:drop-shadow(0 10px 20px rgba(0,0,0,.25))}#pwa-splash .splash-title{font-size:1.45rem;font-weight:800;margin-top:18px;text-align:center}#pwa-splash .splash-sub{font-size:.85rem;color:#dbeafe;margin-top:5px;text-align:center}
+</style>
+
+<meta name="theme-color" content="#0758ba"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="default"/><meta name="apple-mobile-web-app-title" content="Sodikuna"/><link rel="manifest" href="manifest.webmanifest"/><link rel="icon" type="image/png" href="icon-192.png"/><link rel="apple-touch-icon" href="icon-192.png"/>
+</head>
+<body class="min-h-screen flex items-center justify-center sm:py-6 bg-gradient-to-br from-slate-200 via-sky-100 to-slate-300">
+<div id="pwa-splash" aria-label="Pembuka Majelis Ta’lim Sodikuna"><img src="logo-sodikuna.png" alt="Logo Sodikuna"/><div class="splash-title">Majelis Ta’lim Sodikuna</div><div class="splash-sub">Caringin Sukabumi</div></div>
+
+
+  <!-- Mobile-First App Container -->
+  <div id="app-shell" class="relative w-full max-w-[430px] h-[100dvh] sm:h-[860px] bg-[#f4f8fc] sm:rounded-[40px] sm:border-[10px] sm:border-[#1e2430] shadow-2xl overflow-hidden flex flex-col">
+
+    <!-- Top Blue Curved Header -->
+    <header class="relative bg-gradient-to-br from-[#0B6BCB] via-[#1278DC] to-[#1982E6] text-white pt-5 pb-8 px-5 z-20 shrink-0">
+      <!-- Subtle decorative radial light -->
+      <div class="absolute -top-10 right-6 w-48 h-48 bg-sky-300/25 rounded-full blur-2xl pointer-events-none"></div>
+
+      <div class="relative flex items-center justify-between gap-2.5">
+        <!-- Left Circular Logo: YAYASAN SODIKUNA -->
+        <div class="flex items-center gap-3">
+          <div class="w-[66px] h-[66px] rounded-full bg-white p-[3px] shadow-[0_6px_14px_rgba(4,42,88,0.35)] shrink-0 flex items-center justify-center">
+            <img src="logo-sodikuna.png" alt="Logo Yayasan Sodikuna" class="w-full h-full object-contain" />
+          </div>
+
+          <!-- Header Title & Subtitle -->
+          <div>
+            <p class="text-[16.5px] leading-[1.1] font-bold tracking-tight text-white/95">
+              Majelis Ta’lim
+            </p>
+            <h1 class="text-[23px] leading-[1.1] font-extrabold tracking-tight text-white drop-shadow-sm">
+              Sodikuna
+            </h1>
+            <p class="text-[12.5px] font-medium text-[#dbeafe] mt-1 tracking-wide">
+              Caringin Sukabumi
+            </p>
+          </div>
+        </div>
+
+        <!-- Notification Bell Button -->
+        <button
+          onclick="openModal('notifications')"
+          aria-label="Notifikasi"
+          class="relative p-2 rounded-full hover:bg-white/15 active:scale-90 transition cursor-pointer"
+        >
+          <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="2.1" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+          </svg>
+          <span id="notif-badge" class="absolute top-2 right-2 w-2.5 h-2.5 bg-amber-400 rounded-full ring-2 ring-[#0B6BCB]"></span>
+        </button>
+      </div>
+
+      <!-- Asymmetric Smooth Wave Curve at Bottom of Blue Header -->
+      <svg class="absolute bottom-[-1px] left-0 w-full h-7 pointer-events-none" viewBox="0 0 430 34" preserveAspectRatio="none">
+        <path d="M0,4 C115,36 265,34 430,10 L430,34 L0,34 Z" fill="#d9eeff" />
+      </svg>
+    </header>
+
+    <!-- Scrollable Main Content Container -->
+    <main id="main-scroll" class="flex-1 overflow-y-auto no-scrollbar pb-24">
+
+      <!-- TAB 1: BERANDA (HOME VIEW - PIXEL-ACCURATE MATCH) -->
+      <section id="view-beranda" class="animate-view">
+
+        <!-- Hero Welcome Banner with 3D Cream/Sand Mosque & Turquoise Dome -->
+        <div class="relative bg-gradient-to-b from-[#d9eeff] via-[#e9f5ff] to-[#f4f8fc] px-5 pt-2.5 pb-6 overflow-hidden">
+          <!-- Soft Fluffy Clouds -->
+          <div class="absolute top-1 right-28 w-24 h-7 bg-white/80 rounded-full blur-[3px]"></div>
+          <div class="absolute top-5 right-3 w-20 h-6 bg-white/75 rounded-full blur-[3px]"></div>
+          <div class="absolute top-9 right-36 w-16 h-5 bg-white/65 rounded-full blur-[2px]"></div>
+
+          <!-- Right Mosque & Lush Trees Illustration (Detailed 3D-Style SVG) -->
+          <div class="absolute right-0 bottom-0.5 w-[210px] h-[152px] pointer-events-none select-none">
+            <svg viewBox="0 0 230 168" class="w-full h-full">
+              <defs>
+                <linearGradient id="turquoiseDome" x1="0.15" y1="0.1" x2="0.85" y2="0.95">
+                  <stop offset="0%" stop-color="#38bdf8" />
+                  <stop offset="45%" stop-color="#0284c7" />
+                  <stop offset="100%" stop-color="#035388" />
+                </linearGradient>
+                <linearGradient id="creamWall" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#fdedd5" />
+                  <stop offset="65%" stop-color="#f6d8ae" />
+                  <stop offset="100%" stop-color="#e5be8a" />
+                </linearGradient>
+                <linearGradient id="minaretGrad" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#fff3e0" />
+                  <stop offset="60%" stop-color="#f3d2a2" />
+                  <stop offset="100%" stop-color="#d8af77" />
+                </linearGradient>
+                <radialGradient id="bushGreen" cx="35%" cy="30%" r="70%">
+                  <stop offset="0%" stop-color="#84cc16" />
+                  <stop offset="60%" stop-color="#4d7c0f" />
+                  <stop offset="100%" stop-color="#365314" />
+                </radialGradient>
+              </defs>
+
+              <!-- Lush Green Trees on Left of Mosque -->
+              <circle cx="34" cy="126" r="14" fill="url(#bushGreen)" />
+              <circle cx="52" cy="117" r="18" fill="url(#bushGreen)" />
+              <circle cx="66" cy="127" r="13" fill="#65a30d" />
+              <rect x="49" y="129" width="4.5" height="17" rx="2" fill="#713f12" />
+
+              <!-- Tall Minaret on Left of Main Dome -->
+              <rect x="78" y="46" width="15" height="98" fill="url(#minaretGrad)" />
+              <!-- Minaret Balconies -->
+              <rect x="74" y="64" width="23" height="5" rx="2.5" fill="#e2b77e" />
+              <rect x="75" y="62" width="21" height="2.5" rx="1" fill="#fff7ed" />
+              <rect x="74" y="94" width="23" height="5" rx="2.5" fill="#e2b77e" />
+              <rect x="75" y="92" width="21" height="2.5" rx="1" fill="#fff7ed" />
+              <!-- Minaret Windows -->
+              <path d="M83,82 L83,74 A2.5,2.5 0 0,1 88,74 L88,82 Z" fill="#7c5832" />
+              <!-- Minaret Turquoise Dome & Gold Spire -->
+              <path d="M77,46 C77,31 94,31 94,46 Z" fill="url(#turquoiseDome)" />
+              <line x1="85.5" y1="21" x2="85.5" y2="32" stroke="#eab308" stroke-width="2" stroke-linecap="round" />
+              <circle cx="85.5" cy="21" r="2.2" fill="#facc15" />
+
+              <!-- Main Large Turquoise Dome -->
+              <path d="M112,75 C112,35 184,35 184,75 Z" fill="url(#turquoiseDome)" />
+              <!-- Glossy Dome Specular Highlight -->
+              <path d="M124,69 C125,47 142,41 151,42 C139,45 131,55 129,70 Z" fill="#bae6fd" opacity="0.45" />
+              <!-- Gold Crescent Finial -->
+              <line x1="148" y1="22" x2="148" y2="38" stroke="#eab308" stroke-width="2.4" stroke-linecap="round" />
+              <path d="M146,19 A4,4 0 1,0 151,23 A3.2,3.2 0 1,1 146,19 Z" fill="#facc15" />
+
+              <!-- Dome Drum / Neck with Arched Windows -->
+              <rect x="110" y="74" width="76" height="13" rx="2" fill="#faebd7" stroke="#e2be8d" stroke-width="1" />
+              <path d="M118,87 L118,79 A4,4 0 0,1 126,79 L126,87 Z" fill="#0369a1" />
+              <path d="M132,87 L132,79 A4,4 0 0,1 140,79 L140,87 Z" fill="#0369a1" />
+              <path d="M146,87 L146,79 A4,4 0 0,1 154,79 L154,87 Z" fill="#0369a1" />
+              <path d="M160,87 L160,79 A4,4 0 0,1 168,79 L168,87 Z" fill="#0369a1" />
+              <path d="M174,87 L174,79 A4,4 0 0,1 182,79 L182,87 Z" fill="#0369a1" />
+
+              <!-- Left Wing Building -->
+              <rect x="68" y="99" width="44" height="45" fill="#f5d9b1" />
+              <path d="M81,144 L81,119 Q90,108 99,119 L99,144 Z" fill="#5c4738" />
+
+              <!-- Main Center Mosque Facade -->
+              <rect x="109" y="87" width="88" height="57" fill="url(#creamWall)" stroke="#e5c190" stroke-width="1" />
+              <!-- Decorative Top Parapet -->
+              <rect x="107" y="85" width="92" height="4" rx="1.5" fill="#fff6e9" />
+
+              <!-- Grand Pointed Islamic Archway -->
+              <path d="M129,144 L129,113 Q153,93 177,113 L177,144 Z" fill="#d9b17c" />
+              <path d="M135,144 L135,116 Q153,100 171,116 L171,144 Z" fill="#475569" />
+              <path d="M142,144 L142,121 Q153,109 164,121 L164,144 Z" fill="#1e293b" />
+
+              <!-- Right Side Wing -->
+              <rect x="197" y="97" width="33" height="47" fill="#ecc796" />
+              <path d="M206,144 L206,118 Q214,109 222,118 L222,144 Z" fill="#475569" />
+            </svg>
+          </div>
+
+          <!-- Curved Horizon Line -->
+          <svg class="absolute bottom-0 left-0 w-full h-6 pointer-events-none" viewBox="0 0 430 26" preserveAspectRatio="none">
+            <path d="M0,19 Q215,28 430,3 L430,26 L0,26 Z" fill="#f4f8fc" />
+            <path d="M0,19 Q215,28 430,3" fill="none" stroke="#93c5fd" stroke-width="1.8" />
+          </svg>
+
+          <!-- Greeting Text -->
+          <div class="relative z-10 max-w-[65%]">
+            <h2 class="text-[19.5px] leading-[1.24] font-extrabold text-[#0F172A] tracking-tight">
+              Assalamu’alaikum,<br />Jamaah Sodikuna
+            </h2>
+            <p class="text-[13px] leading-[1.42] text-[#334155] font-medium mt-1.5">
+              Selamat datang di aplikasi<br />Majelis Ta’lim Sodikuna.
+            </p>
+          </div>
+        </div>
+
+        <!-- 2x3 Feature Menu Grid (Pixel-Accurate 3D Glossy / Clay Render Cards) -->
+        <div class="px-5 pt-2">
+          <div class="grid grid-cols-3 gap-3.5">
+
+            <!-- Card 1: Dzikir dan Do'a (Glossy Blue + 3D Tilted Oval Amber Tasbih with Specular Beads) -->
+            <button
+              onclick="openFeature('dzikir')"
+              class="menu-btn card-3d-blue rounded-[20px] p-2.5 flex flex-col items-center justify-between aspect-[1/1.09] text-white cursor-pointer"
+            >
+              <div class="w-[62px] h-[62px] flex items-center justify-center mt-0.5">
+                <svg viewBox="0 0 88 88" class="w-full h-full">
+                  <defs>
+                    <radialGradient id="bead3D" cx="32%" cy="28%" r="68%">
+                      <stop offset="0%" stop-color="#fff3b0" />
+                      <stop offset="28%" stop-color="#fbbf24" />
+                      <stop offset="72%" stop-color="#f59e0b" />
+                      <stop offset="100%" stop-color="#b45309" />
+                    </radialGradient>
+                    <linearGradient id="tasselGrad" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#fbbf24" />
+                      <stop offset="100%" stop-color="#b45309" />
+                    </linearGradient>
+                    <filter id="iconShadow1" x="-20%" y="-20%" width="140%" height="140%">
+                      <feDropShadow dx="0" dy="5" stdDeviation="3.5" flood-color="#042f66" flood-opacity="0.45" />
+                    </filter>
+                  </defs>
+
+                  <g filter="url(#iconShadow1)">
+                    <!-- Orange Silk Tassel & Imam Head at Bottom-Left -->
+                    <path d="M25,60 L11,71 L14,75 L27,63 Z" fill="#d97706" />
+                    <path d="M27,62 L15,75 L19,78 L30,64 Z" fill="url(#tasselGrad)" />
+                    <path d="M29,63 L20,77 L24,79 L32,65 Z" fill="#f59e0b" />
+                    <!-- Imam Bead (Kepala Tasbih) -->
+                    <ellipse cx="30" cy="59" rx="6.5" ry="4.5" transform="rotate(-42 30 59)" fill="url(#bead3D)" />
+                    <circle cx="28" cy="57.5" r="1.4" fill="#ffffff" opacity="0.85" />
+
+                    <!-- Tilted Oval Loop of 3D Amber Beads -->
+                    <!-- Left-bottom ascending -->
+                    <circle cx="24" cy="51" r="5.3" fill="url(#bead3D)" />
+                    <circle cx="22.3" cy="49.2" r="1.4" fill="#ffffff" opacity="0.85" />
+
+                    <circle cx="22" cy="41" r="5.5" fill="url(#bead3D)" />
+                    <circle cx="20.3" cy="39.2" r="1.5" fill="#ffffff" opacity="0.85" />
+
+                    <circle cx="25" cy="31" r="5.6" fill="url(#bead3D)" />
+                    <circle cx="23.2" cy="29.2" r="1.5" fill="#ffffff" opacity="0.85" />
+
+                    <circle cx="32" cy="22.5" r="5.6" fill="url(#bead3D)" />
+                    <circle cx="30.2" cy="20.7" r="1.5" fill="#ffffff" opacity="0.85" />
+
+                    <!-- Top curve -->
+                    <circle cx="42" cy="17.5" r="5.7" fill="url(#bead3D)" />
+                    <circle cx="40.2" cy="15.7" r="1.6" fill="#ffffff" opacity="0.85" />
+
+                    <circle cx="53" cy="17" r="5.7" fill="url(#bead3D)" />
+                    <circle cx="51.2" cy="15.2" r="1.6" fill="#ffffff" opacity="0.85" />
+
+                    <circle cx="63.5" cy="21" r="5.7" fill="url(#bead3D)" />
+                    <circle cx="61.7" cy="19.2" r="1.6" fill="#ffffff" opacity="0.85" />
+
+                    <!-- Right-top descending -->
+                    <circle cx="70.5" cy="29.5" r="5.7" fill="url(#bead3D)" />
+                    <circle cx="68.7" cy="27.7" r="1.6" fill="#ffffff" opacity="0.85" />
+
+                    <circle cx="71.5" cy="40" r="5.6" fill="url(#bead3D)" />
+                    <circle cx="69.7" cy="38.2" r="1.5" fill="#ffffff" opacity="0.85" />
+
+                    <circle cx="66.5" cy="49.5" r="5.5" fill="url(#bead3D)" />
+                    <circle cx="64.7" cy="47.7" r="1.5" fill="#ffffff" opacity="0.85" />
+
+                    <!-- Bottom curve returning to Imam -->
+                    <circle cx="57" cy="55.5" r="5.4" fill="url(#bead3D)" />
+                    <circle cx="55.2" cy="53.7" r="1.4" fill="#ffffff" opacity="0.85" />
+
+                    <circle cx="46.5" cy="58" r="5.3" fill="url(#bead3D)" />
+                    <circle cx="44.7" cy="56.2" r="1.4" fill="#ffffff" opacity="0.85" />
+
+                    <circle cx="37" cy="58" r="5.1" fill="url(#bead3D)" />
+                    <circle cx="35.4" cy="56.4" r="1.3" fill="#ffffff" opacity="0.85" />
+                  </g>
+                </svg>
+              </div>
+              <span class="text-[12.5px] leading-[1.18] font-bold text-center tracking-tight drop-shadow-sm">
+                Dzikir<br />dan Do’a
+              </span>
+            </button>
+
+            <!-- Card 2: Catatan Materi (Glossy Purple + 3D Tilted Open Book with Thick Layered Pages) -->
+            <button
+              onclick="openFeature('materi')"
+              class="menu-btn card-3d-purple rounded-[20px] p-2.5 flex flex-col items-center justify-between aspect-[1/1.09] text-white cursor-pointer"
+            >
+              <div class="w-[62px] h-[62px] flex items-center justify-center mt-0.5">
+                <svg viewBox="0 0 88 88" class="w-full h-full">
+                  <defs>
+                    <linearGradient id="bookCover" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#6d28d9" />
+                      <stop offset="100%" stop-color="#3b0764" />
+                    </linearGradient>
+                    <linearGradient id="pageLeft" x1="0" y1="0" x2="1" y2="0.2">
+                      <stop offset="0%" stop-color="#ffffff" />
+                      <stop offset="75%" stop-color="#f8fafc" />
+                      <stop offset="100%" stop-color="#cbd5e1" />
+                    </linearGradient>
+                    <linearGradient id="pageRight" x1="0" y1="0.2" x2="1" y2="0">
+                      <stop offset="0%" stop-color="#cbd5e1" />
+                      <stop offset="25%" stop-color="#f1f5f9" />
+                      <stop offset="100%" stop-color="#ffffff" />
+                    </linearGradient>
+                    <filter id="iconShadow2" x="-20%" y="-20%" width="140%" height="140%">
+                      <feDropShadow dx="0" dy="5" stdDeviation="3.5" flood-color="#2e1065" flood-opacity="0.48" />
+                    </filter>
+                  </defs>
+
+                  <g filter="url(#iconShadow2)" transform="rotate(-8 44 44)">
+                    <!-- Deep Purple Hardcover Base -->
+                    <path d="M10,58 L17,24 L44,30 L71,24 L78,58 L44,66 Z" fill="url(#bookCover)" />
+                    <!-- Thick Page Stack Side Edges -->
+                    <path d="M13,55 L18,22 L44,28 L70,22 L75,55 L44,62 Z" fill="#cbd5e1" />
+                    <path d="M14,52 L19,20 L44,26 L69,20 L74,52 L44,59 Z" fill="#e2e8f0" />
+
+                    <!-- Top Left Open Page -->
+                    <path d="M15,49 L20,18 Q32,16 44,23 L44,55 Q32,48 15,49 Z" fill="url(#pageLeft)" />
+                    <!-- Top Right Open Page -->
+                    <path d="M73,49 L68,18 Q56,16 44,23 L44,55 Q56,48 73,49 Z" fill="url(#pageRight)" />
+
+                    <!-- Center Spine Crease -->
+                    <line x1="44" y1="23" x2="44" y2="55" stroke="#94a3b8" stroke-width="1.6" />
+
+                    <!-- Soft Warm Gray-Brown Text Lines (Left Page) -->
+                    <line x1="23" y1="26" x2="38" y2="28.5" stroke="#a8a29e" stroke-width="2.2" stroke-linecap="round" />
+                    <line x1="22" y1="32" x2="38" y2="34.5" stroke="#a8a29e" stroke-width="2.2" stroke-linecap="round" />
+                    <line x1="21" y1="38" x2="38" y2="40.5" stroke="#a8a29e" stroke-width="2.2" stroke-linecap="round" />
+                    <line x1="20" y1="44" x2="34" y2="46" stroke="#d6d3d1" stroke-width="2.2" stroke-linecap="round" />
+
+                    <!-- Soft Warm Gray-Brown Text Lines (Right Page) -->
+                    <line x1="50" y1="28.5" x2="65" y2="26" stroke="#a8a29e" stroke-width="2.2" stroke-linecap="round" />
+                    <line x1="50" y1="34.5" x2="66" y2="32" stroke="#a8a29e" stroke-width="2.2" stroke-linecap="round" />
+                    <line x1="50" y1="40.5" x2="67" y2="38" stroke="#a8a29e" stroke-width="2.2" stroke-linecap="round" />
+                    <line x1="50" y1="46" x2="62" y2="44" stroke="#d6d3d1" stroke-width="2.2" stroke-linecap="round" />
+                  </g>
+                </svg>
+              </div>
+              <span class="text-[12.5px] leading-[1.18] font-bold text-center tracking-tight drop-shadow-sm">
+                Catatan<br />Materi
+              </span>
+            </button>
+
+            <!-- Card 3: Artikel (Emerald Green + 3D Cream Sheet with 4 Green Lines & Yellow-Orange Pencil) -->
+            <button
+              onclick="openFeature('artikel')"
+              class="menu-btn card-3d-green rounded-[20px] p-2.5 flex flex-col items-center justify-between aspect-[1/1.09] text-white cursor-pointer"
+            >
+              <div class="w-[62px] h-[62px] flex items-center justify-center mt-0.5">
+                <svg viewBox="0 0 88 88" class="w-full h-full">
+                  <defs>
+                    <linearGradient id="paperCream" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#fffbeb" />
+                      <stop offset="100%" stop-color="#fef3c7" />
+                    </linearGradient>
+                    <linearGradient id="pencilBody" x1="0" y1="0" x2="1" y2="0">
+                      <stop offset="0%" stop-color="#fde047" />
+                      <stop offset="50%" stop-color="#f59e0b" />
+                      <stop offset="100%" stop-color="#d97706" />
+                    </linearGradient>
+                    <filter id="iconShadow3" x="-20%" y="-20%" width="140%" height="140%">
+                      <feDropShadow dx="0" dy="5" stdDeviation="3.5" flood-color="#05401d" flood-opacity="0.45" />
+                    </filter>
+                  </defs>
+
+                  <g filter="url(#iconShadow3)">
+                    <!-- Paper Thickness Shadow -->
+                    <rect x="17" y="17" width="46" height="55" rx="9" fill="#d97706" opacity="0.35" />
+                    <!-- 3D Rounded Cream Paper -->
+                    <rect x="16" y="14" width="46" height="55" rx="9" fill="url(#paperCream)" stroke="#ffffff" stroke-width="1.5" />
+
+                    <!-- 4 Green Text Lines -->
+                    <rect x="24" y="24" width="25" height="4.5" rx="2.25" fill="#22c55e" />
+                    <rect x="24" y="33" width="30" height="4.5" rx="2.25" fill="#16a34a" />
+                    <rect x="24" y="42" width="24" height="4.5" rx="2.25" fill="#22c55e" />
+                    <rect x="24" y="51" width="16" height="4.5" rx="2.25" fill="#4ade80" />
+
+                    <!-- 3D Yellow-Orange Pencil Writing at Bottom-Right -->
+                    <g transform="translate(56, 48) rotate(42)">
+                      <!-- Pencil Shadow -->
+                      <rect x="-4" y="-18" width="11" height="32" rx="3" fill="#000000" opacity="0.18" />
+                      <!-- Red Eraser -->
+                      <rect x="-5.5" y="-23" width="11" height="7" rx="3" fill="#ef4444" />
+                      <path d="M-3.5,-22 L-3.5,-17" stroke="#fca5a5" stroke-width="1.5" stroke-linecap="round" />
+                      <!-- Silver Ferrule Ring -->
+                      <rect x="-5.5" y="-17.5" width="11" height="3.5" fill="#e2e8f0" />
+                      <!-- Yellow-Orange Barrel -->
+                      <rect x="-5.5" y="-14" width="11" height="23" fill="url(#pencilBody)" />
+                      <line x1="-2.5" y1="-13" x2="-2.5" y2="8" stroke="#fef9c3" stroke-width="1.5" opacity="0.7" />
+                      <!-- Sharpened Wood Cone -->
+                      <polygon points="-5.5,9 5.5,9 0,20" fill="#fde68a" />
+                      <!-- Graphite Tip -->
+                      <polygon points="-2.2,15.5 2.2,15.5 0,20" fill="#1e293b" />
+                    </g>
+                  </g>
+                </svg>
+              </div>
+              <span class="text-[12.5px] leading-[1.18] font-bold text-center tracking-tight drop-shadow-sm">
+                Artikel
+              </span>
+            </button>
+
+            <!-- Card 4: Kartu Jamaah (Sky Blue + 3D White Framed Blue ID Card) -->
+            <button
+              onclick="openFeature('kartu')"
+              class="menu-btn card-3d-lightblue rounded-[20px] p-2.5 flex flex-col items-center justify-between aspect-[1/1.09] text-[#0F172A] cursor-pointer"
+            >
+              <div class="w-[62px] h-[62px] flex items-center justify-center mt-0.5">
+                <svg viewBox="0 0 88 88" class="w-full h-full">
+                  <defs>
+                    <linearGradient id="idCardBlue" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#38bdf8" />
+                      <stop offset="50%" stop-color="#0284c7" />
+                      <stop offset="100%" stop-color="#1d4ed8" />
+                    </linearGradient>
+                    <filter id="iconShadow4" x="-20%" y="-20%" width="140%" height="140%">
+                      <feDropShadow dx="0" dy="5" stdDeviation="3.5" flood-color="#1e40af" flood-opacity="0.32" />
+                    </filter>
+                  </defs>
+
+                  <g filter="url(#iconShadow4)">
+                    <!-- White 3D Outer ID Card Frame -->
+                    <rect x="10" y="21" width="68" height="46" rx="10" fill="#ffffff" />
+                    <!-- Inner Bright Blue Card Area -->
+                    <rect x="15.5" y="26.5" width="57" height="35" rx="6" fill="url(#idCardBlue)" />
+                    <!-- Subtle Top Gloss Highlight -->
+                    <path d="M17,28 L71,28 L71,36 Q44,41 17,36 Z" fill="#ffffff" opacity="0.16" />
+
+                    <!-- White Person Silhouette on Left -->
+                    <circle cx="30" cy="39" r="5.5" fill="#ffffff" />
+                    <path d="M21,54.5 C21,47.5 39,47.5 39,54.5 Z" fill="#ffffff" />
+
+                    <!-- 3 White Horizontal Lines on Right -->
+                    <rect x="44" y="34" width="22" height="4" rx="2" fill="#ffffff" />
+                    <rect x="44" y="42" width="18" height="4" rx="2" fill="#e0f2fe" />
+                    <rect x="44" y="50" width="22" height="4" rx="2" fill="#bae6fd" />
+                  </g>
+                </svg>
+              </div>
+              <span class="text-[12.5px] leading-[1.18] font-extrabold text-center tracking-tight">
+                Kartu<br />Jamaah
+              </span>
+            </button>
+
+            <!-- Card 5: Jadwal Pengajian (Periwinkle + 3D Wall Calendar with Gold Rings & Green Checkmark) -->
+            <button
+              onclick="openFeature('jadwal')"
+              class="menu-btn card-3d-periwinkle rounded-[20px] p-2.5 flex flex-col items-center justify-between aspect-[1/1.09] text-[#0F172A] cursor-pointer"
+            >
+              <div class="w-[62px] h-[62px] flex items-center justify-center mt-0.5">
+                <svg viewBox="0 0 88 88" class="w-full h-full">
+                  <defs>
+                    <linearGradient id="calHeader" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#2563eb" />
+                      <stop offset="100%" stop-color="#1e3a8a" />
+                    </linearGradient>
+                    <linearGradient id="ringGold" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#fef08a" />
+                      <stop offset="50%" stop-color="#eab308" />
+                      <stop offset="100%" stop-color="#a16207" />
+                    </linearGradient>
+                    <radialGradient id="checkGreen" cx="35%" cy="30%" r="70%">
+                      <stop offset="0%" stop-color="#4ade80" />
+                      <stop offset="65%" stop-color="#16a34a" />
+                      <stop offset="100%" stop-color="#15803d" />
+                    </radialGradient>
+                    <filter id="iconShadow5" x="-20%" y="-20%" width="140%" height="140%">
+                      <feDropShadow dx="0" dy="5" stdDeviation="3.5" flood-color="#312e81" flood-opacity="0.32" />
+                    </filter>
+                  </defs>
+
+                  <g filter="url(#iconShadow5)">
+                    <!-- White 3D Calendar Body -->
+                    <rect x="14" y="19" width="54" height="49" rx="10" fill="#ffffff" />
+                    <!-- Dark Blue Top Header -->
+                    <path d="M14,29 A10,10 0 0,1 24,19 L58,19 A10,10 0 0,1 68,29 L68,34 L14,34 Z" fill="url(#calHeader)" />
+
+                    <!-- 2 Gold/Yellow Binder Rings -->
+                    <rect x="26" y="13" width="6" height="12" rx="3" fill="url(#ringGold)" />
+                    <rect x="50" y="13" width="6" height="12" rx="3" fill="url(#ringGold)" />
+
+                    <!-- Gray Date Grid Boxes -->
+                    <rect x="21" y="40" width="9" height="7" rx="2" fill="#cbd5e1" />
+                    <rect x="35" y="40" width="9" height="7" rx="2" fill="#cbd5e1" />
+                    <rect x="49" y="40" width="9" height="7" rx="2" fill="#cbd5e1" />
+
+                    <rect x="21" y="51" width="9" height="7" rx="2" fill="#cbd5e1" />
+                    <rect x="35" y="51" width="9" height="7" rx="2" fill="#93c5fd" />
+
+                    <!-- Bright Green 3D Circle Badge with White Checkmark -->
+                    <circle cx="62" cy="59" r="13" fill="url(#checkGreen)" stroke="#ffffff" stroke-width="2.5" />
+                    <path d="M56.5,59 L60.5,63 L68,55" fill="none" stroke="#ffffff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+                  </g>
+                </svg>
+              </div>
+              <span class="text-[12.5px] leading-[1.18] font-extrabold text-center tracking-tight">
+                Jadwal<br />Pengajian
+              </span>
+            </button>
+
+            <!-- Card 6: Pengumuman (Soft Mint + 3D Glossy White-Silver & Bright Blue Megaphone) -->
+            <button
+              onclick="openFeature('pengumuman')"
+              class="menu-btn card-3d-mint rounded-[20px] p-2.5 flex flex-col items-center justify-between aspect-[1/1.09] text-[#0F172A] cursor-pointer"
+            >
+              <div class="w-[62px] h-[62px] flex items-center justify-center mt-0.5">
+                <svg viewBox="0 0 88 88" class="w-full h-full">
+                  <defs>
+                    <linearGradient id="megaBody" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#ffffff" />
+                      <stop offset="55%" stop-color="#f1f5f9" />
+                      <stop offset="100%" stop-color="#cbd5e1" />
+                    </linearGradient>
+                    <linearGradient id="megaBlue" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#3b82f6" />
+                      <stop offset="100%" stop-color="#1d4ed8" />
+                    </linearGradient>
+                    <filter id="iconShadow6" x="-20%" y="-20%" width="140%" height="140%">
+                      <feDropShadow dx="0" dy="5" stdDeviation="3.5" flood-color="#065f46" flood-opacity="0.32" />
+                    </filter>
+                  </defs>
+
+                  <g filter="url(#iconShadow6)" transform="rotate(-22 44 44)">
+                    <!-- Bright Blue Handle -->
+                    <path d="M26,48 L31,66 C32,69 37,68 36,64 L32,47 Z" fill="url(#megaBlue)" />
+                    <!-- Bright Blue Back Cap -->
+                    <rect x="13" y="35" width="8" height="16" rx="4" fill="url(#megaBlue)" />
+                    <!-- Glossy White-Silver Horn Cone -->
+                    <path d="M19,35 L54,20 L54,66 L19,51 Z" fill="url(#megaBody)" />
+                    <!-- Blue Accent Band -->
+                    <path d="M22,36 L30,32.5 L30,53.5 L22,50 Z" fill="#2563eb" />
+                    <!-- Top Specular Highlight -->
+                    <path d="M31,33 L52,24 L52,30 L31,38 Z" fill="#ffffff" opacity="0.9" />
+                    <!-- White Outer Rim -->
+                    <ellipse cx="56" cy="43" rx="8" ry="23" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" />
+                    <!-- Bright Blue Inner Funnel -->
+                    <ellipse cx="56" cy="43" rx="4.8" ry="17" fill="url(#megaBlue)" />
+                    <!-- Center Speaker Cone -->
+                    <ellipse cx="55" cy="43" rx="2.2" ry="7" fill="#93c5fd" />
+                  </g>
+                </svg>
+              </div>
+              <span class="text-[12.5px] leading-[1.18] font-extrabold text-center tracking-tight">
+                Pengumuman
+              </span>
+            </button>
+
+          </div>
+        </div>
+
+        <!-- Bottom Quote Card Banner with Grand Blue Mosque & Twin Minarets -->
+        <div class="px-5 mt-5">
+          <div class="relative rounded-[22px] bg-gradient-to-r from-[#0D5CAB] via-[#1b74cf] to-[#7cc0f8] p-5 text-white shadow-[0_10px_22px_-6px_rgba(13,92,171,0.45)] overflow-hidden">
+            <!-- Soft Clouds behind Mosque -->
+            <div class="absolute top-2 right-24 w-16 h-4 bg-white/40 rounded-full blur-[2px]"></div>
+            <div class="absolute top-5 right-4 w-14 h-4 bg-white/45 rounded-full blur-[2px]"></div>
+
+            <!-- Grand Blue Mosque Illustration on Right Side -->
+            <div class="absolute right-0 bottom-0 w-[180px] h-[135px] pointer-events-none">
+              <svg viewBox="0 0 210 155" class="w-full h-full">
+                <defs>
+                  <linearGradient id="quoteMainDome" x1="0.1" y1="0.1" x2="0.9" y2="0.95">
+                    <stop offset="0%" stop-color="#38bdf8" />
+                    <stop offset="55%" stop-color="#0284c7" />
+                    <stop offset="100%" stop-color="#07438a" />
+                  </linearGradient>
+                </defs>
+
+                <!-- Left Pointed Minaret -->
+                <rect x="64" y="54" width="10" height="96" fill="#dceaf9" />
+                <rect x="62" y="72" width="14" height="3.5" rx="1.5" fill="#b4d2f2" />
+                <path d="M63,54 C63,41 75,41 75,54 Z" fill="url(#quoteMainDome)" />
+                <line x1="69" y1="34" x2="69" y2="43" stroke="#facc15" stroke-width="1.6" />
+
+                <!-- Right Pointed Minaret -->
+                <rect x="184" y="54" width="10" height="96" fill="#cfe2f7" />
+                <rect x="182" y="72" width="14" height="3.5" rx="1.5" fill="#a5c7ed" />
+                <path d="M183,54 C183,41 195,41 195,54 Z" fill="url(#quoteMainDome)" />
+                <line x1="189" y1="34" x2="189" y2="43" stroke="#facc15" stroke-width="1.6" />
+
+                <!-- Main Large Blue Dome -->
+                <path d="M90,68 C90,26 168,26 168,68 Z" fill="url(#quoteMainDome)" />
+                <path d="M102,63 C104,42 120,36 129,37 C118,40 110,50 108,64 Z" fill="#bae6fd" opacity="0.4" />
+                <!-- Gold Crescent Spire -->
+                <line x1="129" y1="15" x2="129" y2="30" stroke="#facc15" stroke-width="2" />
+                <circle cx="129" cy="14" r="2.3" fill="#fde047" />
+
+                <!-- Dome Drum -->
+                <rect x="87" y="67" width="84" height="10" fill="#e6f0fb" />
+
+                <!-- Mosque Facade Body -->
+                <rect x="76" y="77" width="106" height="78" fill="#f1f7fe" />
+                <rect x="52" y="96" width="24" height="59" fill="#dceaf9" />
+                <rect x="182" y="96" width="24" height="59" fill="#cfe2f7" />
+
+                <!-- Layered Grand Archway Entrance -->
+                <path d="M97,155 L97,112 Q129,85 161,112 L161,155 Z" fill="#9bc0e8" />
+                <path d="M105,155 L105,116 Q129,94 153,116 L153,155 Z" fill="#3a6ea5" />
+                <path d="M114,155 L114,122 Q129,106 144,122 L144,155 Z" fill="#1d4470" />
+
+                <!-- Side Arched Windows -->
+                <path d="M60,136 L60,118 A4.5,4.5 0 0,1 69,118 L69,136 Z" fill="#4f83bd" />
+                <path d="M189,136 L189,118 A4.5,4.5 0 0,1 198,118 L198,136 Z" fill="#4f83bd" />
+              </svg>
+            </div>
+
+            <!-- Quote Content -->
+            <div class="relative z-10 max-w-[67%]">
+              <!-- Large White Double Quote Icon -->
+              <svg class="w-8 h-8 text-white mb-1 drop-shadow-sm" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z" />
+              </svg>
+              <h3 class="text-[14.5px] font-extrabold italic tracking-tight text-white">
+                Majelis Ta’lim Sodikuna
+              </h3>
+              <p class="text-[12.5px] leading-[1.45] font-medium text-white/95 mt-1">
+                Tempat Menuntut Ilmu,<br />
+                Mempererat Ukhuwah,<br />
+                dan Meningkatkan<br />
+                Ketaqwaan.”
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: MATERI (KAJIAN & DZIKIR HUB) -->
+      <section id="view-materi" class="hidden animate-view px-5 pt-4 space-y-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <h2 class="text-lg font-extrabold text-[#152238]">Materi & Kajian Kitab</h2>
+            <p class="text-xs text-slate-500">Arsip catatan pengajian Majelis Ta’lim Sodikuna</p>
+          </div>
+          <button onclick="openFeature('dzikir')" class="px-3 py-1.5 rounded-full bg-blue-600 text-white text-xs font-bold shadow">
+            Tasbih Digital
+          </button>
+        </div>
+
+        <div id="materi-list-container" class="space-y-3">
+          <!-- Populated dynamically via JS -->
+        </div>
+      </section>
+
+      <!-- TAB 3: JAMAAH (KARTU DIGITAL & INFO JAMAAH) -->
+      <section id="view-jamaah" class="hidden animate-view px-5 pt-4 space-y-4">
+        <div>
+          <h2 class="text-lg font-extrabold text-[#152238]">Kartu & Data Jamaah</h2>
+          <p class="text-xs text-slate-500">Identitas resmi anggota Majelis Ta’lim Sodikuna</p>
+        </div>
+
+        <!-- Digital Member Card -->
+        <div class="rounded-2xl bg-gradient-to-br from-[#0758ba] via-[#0e74e6] to-[#084594] p-5 text-white shadow-xl relative overflow-hidden">
+          <div class="absolute -right-8 -bottom-8 w-36 h-36 rounded-full bg-white/10"></div>
+          <div class="flex items-center justify-between border-b border-white/20 pb-3">
+            <div>
+              <p class="text-[10px] uppercase tracking-widest text-sky-200 font-bold">Kartu Tanda Jamaah</p>
+              <h3 class="text-base font-extrabold">Majelis Ta’lim Sodikuna</h3>
+            </div>
+            <span class="px-2.5 py-1 rounded-full bg-emerald-400/20 border border-emerald-300/40 text-emerald-200 text-[10px] font-bold">
+              AKTIF
+            </span>
+          </div>
+          <div class="mt-4 flex items-center gap-3.5">
+            <div class="w-14 h-14 rounded-xl bg-white/20 flex items-center justify-center text-xl font-extrabold border border-white/30">
+              AS
+            </div>
+            <div>
+              <p id="card-jamaah-name" class="font-bold text-base">Ahmad Suryana</p>
+              <p class="text-xs text-sky-100">ID: MTS-CRG-2026-0148</p>
+              <p class="text-[11px] text-sky-200 mt-0.5">Kp. Caringin, Kec. Caringin, Kab. Sukabumi</p>
+            </div>
+          </div>
+          <div class="mt-4 pt-3 border-t border-white/15 flex items-center justify-between text-[11px] text-sky-100">
+            <span>Majelis Rutin: Malam Jum'at & Ahad Pagi</span>
+            <button onclick="copyMemberId()" class="underline font-bold text-white cursor-pointer">Salin ID</button>
+          </div>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="grid grid-cols-2 gap-3">
+          <div class="bg-white p-3.5 rounded-2xl border border-slate-200/70 shadow-sm">
+            <p class="text-xs text-slate-500">Kehadiran Bulan Ini</p>
+            <p class="text-xl font-extrabold text-[#0b68d4] mt-1">8 / 8 Kajian</p>
+            <span class="text-[11px] text-emerald-600 font-semibold">100% Istiqomah</span>
+          </div>
+          <div class="bg-white p-3.5 rounded-2xl border border-slate-200/70 shadow-sm">
+            <p class="text-xs text-slate-500">Total Jamaah Terdaftar</p>
+            <p class="text-xl font-extrabold text-[#152238] mt-1">342 Jamaah</p>
+            <span class="text-[11px] text-slate-500">Caringin & Sekitarnya</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 4: AKUN (PENGATURAN & PROFIL) -->
+      <section id="view-akun" class="hidden animate-view px-5 pt-4 space-y-4">
+        <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200/70 flex items-center gap-3.5">
+          <div class="w-14 h-14 rounded-full bg-blue-600 text-white flex items-center justify-center text-lg font-extrabold">
+            AS
+          </div>
+          <div class="flex-1">
+            <h2 id="profile-name-display" class="font-extrabold text-[#152238] text-base">Ahmad Suryana</h2>
+            <p class="text-xs text-slate-500">Jamaah Aktif • Caringin Sukabumi</p>
+          </div>
+          <button onclick="openModal('edit-profile')" class="px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-xs font-bold text-slate-700 cursor-pointer">
+            Ubah
+          </button>
+        </div>
+
+        <div class="bg-white rounded-2xl divide-y divide-slate-100 shadow-sm border border-slate-200/70 overflow-hidden">
+          <button onclick="openFeature('jadwal')" class="w-full px-4 py-3.5 flex items-center justify-between text-left hover:bg-slate-50 cursor-pointer">
+            <span class="text-sm font-semibold text-slate-700">Pengingat Jadwal Pengajian</span>
+            <span class="text-xs font-bold text-blue-600">Aktif</span>
+          </button>
+          <button onclick="openFeature('pengumuman')" class="w-full px-4 py-3.5 flex items-center justify-between text-left hover:bg-slate-50 cursor-pointer">
+            <span class="text-sm font-semibold text-slate-700">Info & Pengumuman Majelis</span>
+            <span class="text-xs text-slate-400">Lihat &rarr;</span>
+          </button>
+          <button onclick="openModal('tentang')" class="w-full px-4 py-3.5 flex items-center justify-between text-left hover:bg-slate-50 cursor-pointer">
+            <span class="text-sm font-semibold text-slate-700">Tentang Yayasan Sodikuna</span>
+            <span class="text-xs text-slate-400">v1.0</span>
+          </button>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="absolute bottom-0 left-0 right-0 bg-white border-t border-slate-200/80 px-3 py-2.5 flex items-center justify-around z-30 shadow-[0_-4px_20px_rgba(15,23,42,0.06)]">
+
+      <!-- Nav 1: Beranda (Active Blue Pill) -->
+      <button
+        onclick="switchTab('beranda')"
+        data-tab="beranda"
+        class="nav-item flex flex-col items-center justify-center px-5 py-2 rounded-[22px] bg-[#0B6BCB] text-white transition-all cursor-pointer"
+      >
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z" />
+          <path d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z" />
+        </svg>
+        <span class="text-[11px] font-bold mt-0.5">Beranda</span>
+      </button>
+
+      <!-- Nav 2: Materi -->
+      <button
+        onclick="switchTab('materi')"
+        data-tab="materi"
+        class="nav-item flex flex-col items-center justify-center px-4 py-2 rounded-[22px] text-[#0F172A] hover:bg-slate-100 transition-all cursor-pointer"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+        </svg>
+        <span class="text-[11px] font-semibold mt-0.5">Materi</span>
+      </button>
+
+      <!-- Nav 3: Jamaah -->
+      <button
+        onclick="switchTab('jamaah')"
+        data-tab="jamaah"
+        class="nav-item flex flex-col items-center justify-center px-4 py-2 rounded-[22px] text-[#0F172A] hover:bg-slate-100 transition-all cursor-pointer"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+        </svg>
+        <span class="text-[11px] font-semibold mt-0.5">Jamaah</span>
+      </button>
+
+      <!-- Nav 4: Akun -->
+      <button
+        onclick="switchTab('akun')"
+        data-tab="akun"
+        class="nav-item flex flex-col items-center justify-center px-4 py-2 rounded-[22px] text-[#0F172A] hover:bg-slate-100 transition-all cursor-pointer"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+        <span class="text-[11px] font-semibold mt-0.5">Akun</span>
+      </button>
+    </nav>
+
+    <!-- Interactive Drawer / Modal Overlay for Features -->
+    <div id="feature-modal" class="hidden absolute inset-0 z-40 bg-slate-900/50 backdrop-blur-[2px] flex items-end justify-center">
+      <div class="bg-white w-full max-h-[84%] rounded-t-[30px] shadow-2xl flex flex-col overflow-hidden animate-view">
+        <!-- Modal Handle & Header -->
+        <div class="px-5 pt-3 pb-3 border-b border-slate-100 flex items-center justify-between shrink-0">
+          <div>
+            <div class="w-10 h-1 bg-slate-300 rounded-full mb-2"></div>
+            <h3 id="modal-title" class="text-base font-extrabold text-[#152238]">Judul Fitur</h3>
+          </div>
+          <button onclick="closeModal()" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-600 font-bold cursor-pointer">
+            ✕
+          </button>
+        </div>
+
+        <!-- Modal Dynamic Body -->
+        <div id="modal-body" class="p-5 overflow-y-auto no-scrollbar space-y-4 text-sm text-slate-700">
+        </div>
+      </div>
+    </div>
+
+    <!-- Custom Toast Notification (No alert() used) -->
+    <div id="toast" class="hidden absolute top-24 left-1/2 -translate-x-1/2 z-50 bg-[#152238] text-white text-xs font-semibold px-4 py-2.5 rounded-full shadow-lg whitespace-nowrap">
+      Pesan notifikasi
+    </div>
+
+  </div>
+
+  <script>
+    // --- DATA KONTEN MAJELIS TA'LIM SODIKUNA ---
+    const dataKajian = [
+      {
+        judul: "Keutamaan Menuntut Ilmu & Adab Majelis",
+        kitab: "Kitab Ta'lim Muta'allim",
+        pemateri: "KH. Ahmad Sodikin",
+        tanggal: "Kamis Malam Jum'at • Ba'da Isya",
+        ringkasan: "Niat ikhlas karena Allah SWT adalah pondasi utama keberkahan ilmu. Menghormati guru serta menjaga adab di majelis membuka pintu pemahaman."
+      },
+      {
+        judul: "Bab Thaharah & Kesempurnaan Wudhu",
+        kitab: "Kitab Safinatun Najah",
+        pemateri: "Ust. Cepi Hidayatullah",
+        tanggal: "Ahad Pagi • 07.30 WIB",
+        ringkasan: "Membahas rukun wudhu yang enam, sunnah-sunnah wudhu, serta hal-hal yang membatalkan wudhu secara praktis."
+      },
+      {
+        judul: "Mempererat Ukhuwah Islamiyah di Masyarakat",
+        kitab: "Riyadhus Shalihin",
+        pemateri: "KH. Ahmad Sodikin",
+        tanggal: "Selasa Malam Rabu • Ba'da Maghrib",
+        ringkasan: "Sesama mukmin bagaikan satu bangunan yang saling menguatkan. Menjaga lisan dan saling membantu tetangga adalah ciri iman."
+      }
+    ];
+
+    const dataArtikel = [
+      {
+        judul: "5 Amalan Ringan Pembuka Pintu Rezeki & Keberkahan",
+        kategori: "Tazkiyatun Nafs",
+        waktuBaca: "3 menit baca",
+        isi: "Istighfar di waktu sahur, memperbanyak shalawat kepada Nabi Muhammad SAW, menjaga silaturahmi, sedekah subuh, dan berbakti kepada kedua orang tua."
+      },
+      {
+        judul: "Sejarah & Kiprah Dakwah Majelis Ta’lim di Caringin Sukabumi",
+        kategori: "Khazanah Lokal",
+        waktuBaca: "4 menit baca",
+        isi: "Majelis Ta’lim Sodikuna hadir sebagai wadah pembinaan umat di Caringin Sukabumi untuk mencetak generasi berilmu, berakhlak mulia, dan cinta Al-Qur'an."
+      }
+    ];
+
+    const dataJadwal = [
+      { hari: "Malam Jum'at", waktu: "19.30 WIB (Ba'da Isya)", kegiatan: "Yasinan, Tahlil & Kajian Kitab Kuning", lokasi: "Aula Utama Majelis Sodikuna" },
+      { hari: "Ahad Pagi", waktu: "07.30 - 09.30 WIB", kegiatan: "Pengajian Umum Bapak & Ibu Jamaah", lokasi: "Masjid Jami Sodikuna Caringin" },
+      { hari: "Selasa Malam", waktu: "18.30 WIB (Ba'da Maghrib)", kegiatan: "Tahsin Al-Qur'an & Fiqih Ibadah", lokasi: "Ruang Majelis Lantai 1" },
+      { hari: "Sabtu Sore", waktu: "16.00 WIB (Ba'da Ashar)", kegiatan: "Kajian Pemuda & Remaja Masjid", lokasi: "Serambi Masjid Sodikuna" }
+    ];
+
+    const dataPengumuman = [
+      {
+        judul: "Peringatan Maulid Nabi Muhammad SAW 1448 H",
+        tanggal: "Info Terbaru",
+        isi: "InsyaAllah akan dilaksanakan pada hari Ahad mendatang pukul 08.00 WIB di halaman Majelis Ta’lim Sodikuna Caringin. Dimohon kehadiran seluruh jamaah."
+      },
+      {
+        judul: "Program Infaq Pembangunan Perpustakaan Kitab",
+        tanggal: "Program Yayasan",
+        isi: "Yayasan Sodikuna membuka kesempatan wakaf & infaq kitab untuk menunjang fasilitas belajar santri dan jamaah."
+      }
+    ];
+
+    // --- STATE ---
+    let tasbihCount = 0;
+    let tasbihTarget = 33;
+    let dzikirIndex = 0;
+    const dzikirList = [
+      { arab: "سُبْحَانَ اللَّهِ", latin: "Subhanallah", arti: "Maha Suci Allah" },
+      { arab: "الْحَمْدُ لِلَّهِ", latin: "Alhamdulillah", arti: "Segala Puji Bagi Allah" },
+      { arab: "اللَّهُ أَكْبَرُ", latin: "Allahu Akbar", arti: "Allah Maha Besar" },
+      { arab: "أَسْتَغْفِرُ اللَّهَ الْعَظِيمَ", latin: "Astaghfirullahal 'Adzim", arti: "Aku memohon ampun kepada Allah Yang Maha Agung" }
+    ];
+
+    // --- RENDER MATERI TAB ---
+    function renderMateriTab() {
+      const container = document.getElementById('materi-list-container');
+      container.innerHTML = dataKajian.map(item => `
+        <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200/70">
+          <div class="flex items-center justify-between text-[11px] font-bold text-blue-600 mb-1">
+            <span>${item.kitab}</span>
+            <span class="text-slate-400 font-medium">${item.tanggal}</span>
+          </div>
+          <h4 class="font-extrabold text-[#152238] text-sm">${item.judul}</h4>
+          <p class="text-xs text-slate-500 mt-0.5">Oleh: ${item.pemateri}</p>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed bg-slate-50 p-2.5 rounded-xl">${item.ringkasan}</p>
+        </div>
+      `).join('');
+    }
+
+    // --- NAVIGATION TABS ---
+    function switchTab(tabName) {
+      const views = ['beranda', 'materi', 'jamaah', 'akun'];
+      views.forEach(v => {
+        const el = document.getElementById(`view-${v}`);
+        if (v === tabName) {
+          el.classList.remove('hidden');
+        } else {
+          el.classList.add('hidden');
+        }
+      });
+
+      // Update Bottom Nav Active State
+      document.querySelectorAll('.nav-item').forEach(btn => {
+        const isTarget = btn.getAttribute('data-tab') === tabName;
+        if (isTarget) {
+          btn.classList.add('bg-[#0B6BCB]', 'text-white');
+          btn.classList.remove('text-[#0F172A]', 'hover:bg-slate-100');
+        } else {
+          btn.classList.remove('bg-[#0B6BCB]', 'text-white');
+          btn.classList.add('text-[#0F172A]', 'hover:bg-slate-100');
+        }
+      });
+
+      document.getElementById('main-scroll').scrollTop = 0;
+    }
+
+    // --- MODAL / FEATURE HANDLERS ---
+    function openFeature(type) {
+      const modal = document.getElementById('feature-modal');
+      const title = document.getElementById('modal-title');
+      const body = document.getElementById('modal-body');
+
+      if (type === 'dzikir') {
+        title.textContent = "Dzikir dan Do’a • Tasbih Digital";
+        renderTasbihModal(body);
+      } else if (type === 'materi') {
+        title.textContent = "Catatan Materi Pengajian";
+        body.innerHTML = dataKajian.map(item => `
+          <div class="p-3.5 rounded-2xl bg-purple-50/70 border border-purple-100">
+            <span class="text-[11px] font-bold text-purple-700">${item.kitab}</span>
+            <h4 class="font-extrabold text-slate-900 mt-0.5">${item.judul}</h4>
+            <p class="text-xs text-slate-500 mt-0.5">${item.pemateri} • ${item.tanggal}</p>
+            <p class="text-xs text-slate-700 mt-2 leading-relaxed">${item.ringkasan}</p>
+          </div>
+        `).join('');
+      } else if (type === 'artikel') {
+        title.textContent = "Artikel Islami Sodikuna";
+        body.innerHTML = dataArtikel.map(art => `
+          <div class="p-3.5 rounded-2xl bg-emerald-50/70 border border-emerald-100">
+            <div class="flex justify-between text-[11px] font-bold text-emerald-700">
+              <span>${art.kategori}</span>
+              <span>${art.waktuBaca}</span>
+            </div>
+            <h4 class="font-extrabold text-slate-900 mt-1">${art.judul}</h4>
+            <p class="text-xs text-slate-700 mt-2 leading-relaxed">${art.isi}</p>
+          </div>
+        `).join('');
+      } else if (type === 'kartu') {
+        closeModal();
+        switchTab('jamaah');
+        return;
+      } else if (type === 'jadwal') {
+        title.textContent = "Jadwal Pengajian Rutin";
+        body.innerHTML = dataJadwal.map(j => `
+          <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200/80 flex items-start gap-3">
+            <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-extrabold text-xs shrink-0">
+              ✓
+            </div>
+            <div>
+              <h4 class="font-extrabold text-slate-900 text-sm">${j.hari}</h4>
+              <p class="text-xs font-bold text-blue-600">${j.waktu}</p>
+              <p class="text-xs text-slate-700 mt-1">${j.kegiatan}</p>
+              <p class="text-[11px] text-slate-500 mt-0.5">📍 ${j.lokasi}</p>
+            </div>
+          </div>
+        `).join('');
+      } else if (type === 'pengumuman') {
+        title.textContent = "Papan Pengumuman Majelis";
+        body.innerHTML = dataPengumuman.map(p => `
+          <div class="p-3.5 rounded-2xl bg-teal-50/80 border border-teal-200">
+            <span class="inline-block px-2 py-0.5 rounded-full bg-teal-600 text-white text-[10px] font-bold">${p.tanggal}</span>
+            <h4 class="font-extrabold text-slate-900 mt-1.5">${p.judul}</h4>
+            <p class="text-xs text-slate-700 mt-1.5 leading-relaxed">${p.isi}</p>
+          </div>
+        `).join('');
+      }
+
+      modal.classList.remove('hidden');
+    }
+
+    function openModal(modalType) {
+      const modal = document.getElementById('feature-modal');
+      const title = document.getElementById('modal-title');
+      const body = document.getElementById('modal-body');
+
+      if (modalType === 'notifications') {
+        document.getElementById('notif-badge').classList.add('hidden');
+        title.textContent = "Notifikasi Majelis";
+        body.innerHTML = `
+          <div class="space-y-3">
+            <div class="p-3 rounded-2xl bg-blue-50 border border-blue-100">
+              <p class="text-xs font-bold text-blue-700">Pengingat Kajian Malam Ini</p>
+              <p class="text-xs text-slate-600 mt-1">Jangan lupa hadir pada kajian rutin ba'da Isya bersama KH. Ahmad Sodikin di Majelis Ta’lim Sodikuna.</p>
+            </div>
+            <div class="p-3 rounded-2xl bg-slate-50 border border-slate-200">
+              <p class="text-xs font-bold text-slate-800">Catatan Materi Baru Tersedia</p>
+              <p class="text-xs text-slate-600 mt-1">Ringkasan Kitab Safinatun Najah Bab Thaharah telah ditambahkan.</p>
+            </div>
+          </div>
+        `;
+      } else if (modalType === 'edit-profile') {
+        title.textContent = "Ubah Nama Jamaah";
+        body.innerHTML = `
+          <div class="space-y-3">
+            <label class="block text-xs font-bold text-slate-600">Nama Lengkap Jamaah</label>
+            <input id="input-jamaah-name" type="text" value="${document.getElementById('card-jamaah-name').textContent}" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-blue-600" />
+            <button onclick="saveProfileName()" class="w-full py-2.5 rounded-xl bg-blue-600 text-white font-bold text-sm cursor-pointer">
+              Simpan Perubahan
+            </button>
+          </div>
+        `;
+      } else if (modalType === 'tentang') {
+        title.textContent = "Yayasan Sodikuna Caringin";
+        body.innerHTML = `
+          <p class="text-xs leading-relaxed text-slate-600">
+            <strong>Majelis Ta’lim Sodikuna</strong> berlokasi di Kecamatan Caringin, Kabupaten Sukabumi, Jawa Barat. Berkomitmen menjadi pusat pendidikan Islam, kajian kitab, serta mempererat ukhuwah Islamiyah masyarakat.
+          </p>
+        `;
+      }
+
+      modal.classList.remove('hidden');
+    }
+
+    function renderTasbihModal(container) {
+      const current = dzikirList[dzikirIndex];
+      container.innerHTML = `
+        <div class="text-center space-y-4">
+          <div class="flex justify-center gap-1.5 flex-wrap">
+            ${dzikirList.map((d, idx) => `
+              <button onclick="selectDzikir(${idx})" class="px-2.5 py-1 rounded-full text-[11px] font-bold cursor-pointer ${idx === dzikirIndex ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-600'}">
+                ${d.latin}
+              </button>
+            `).join('')}
+          </div>
+
+          <div class="bg-gradient-to-b from-blue-50 to-sky-50 p-4 rounded-2xl border border-blue-100">
+            <p class="font-arabic text-3xl text-[#0853b0] font-bold leading-loose">${current.arab}</p>
+            <p class="font-extrabold text-slate-800 text-sm mt-1">${current.latin}</p>
+            <p class="text-xs text-slate-500">${current.arti}</p>
+          </div>
+
+          <div class="py-2">
+            <button onclick="incrementTasbih()" class="w-36 h-36 mx-auto rounded-full card-3d-blue text-white flex flex-col items-center justify-center active:scale-95 transition cursor-pointer select-none">
+              <span class="text-4xl font-extrabold">${tasbihCount}</span>
+              <span class="text-[11px] text-sky-100 mt-1">Target: ${tasbihTarget}</span>
+            </button>
+          </div>
+
+          <div class="flex items-center justify-center gap-3">
+            <button onclick="resetTasbih()" class="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-xs font-bold text-slate-700 cursor-pointer">
+              Reset Hitungan
+            </button>
+            <button onclick="toggleTarget()" class="px-4 py-2 rounded-xl bg-amber-100 text-amber-800 text-xs font-bold cursor-pointer">
+              Target: ${tasbihTarget === 33 ? '33x' : '99x'}
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    function selectDzikir(idx) {
+      dzikirIndex = idx;
+      tasbihCount = 0;
+      renderTasbihModal(document.getElementById('modal-body'));
+    }
+
+    function incrementTasbih() {
+      tasbihCount++;
+      if (tasbihCount === tasbihTarget) {
+        showToast(`Alhamdulillah, tercapai ${tasbihTarget}x dzikir!`);
+      }
+      renderTasbihModal(document.getElementById('modal-body'));
+    }
+
+    function resetTasbih() {
+      tasbihCount = 0;
+      renderTasbihModal(document.getElementById('modal-body'));
+    }
+
+    function toggleTarget() {
+      tasbihTarget = tasbihTarget === 33 ? 99 : 33;
+      renderTasbihModal(document.getElementById('modal-body'));
+    }
+
+    function saveProfileName() {
+      const val = document.getElementById('input-jamaah-name').value.trim();
+      if (val) {
+        document.getElementById('card-jamaah-name').textContent = val;
+        document.getElementById('profile-name-display').textContent = val;
+        showToast("Nama jamaah diperbarui!");
+        closeModal();
+      }
+    }
+
+    function copyMemberId() {
+      const tempInput = document.createElement('input');
+      tempInput.value = 'MTS-CRG-2026-0148';
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand('copy');
+      document.body.removeChild(tempInput);
+      showToast("ID Jamaah berhasil disalin!");
+    }
+
+    function closeModal() {
+      document.getElementById('feature-modal').classList.add('hidden');
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 2400);
+    }
+
+    // Initialize
+    renderMateriTab();
+  
+window.addEventListener('load',()=>{const splash=document.getElementById('pwa-splash');setTimeout(()=>splash&&splash.classList.add('hide'),1250);if('serviceWorker'in navigator)navigator.serviceWorker.register('./service-worker.js').catch(()=>{});});
+</script>
+</body>
+</html>
