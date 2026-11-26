@@ -158,33 +158,22 @@
       <!-- TAB 1: BERANDA (HOME VIEW - PIXEL-ACCURATE MATCH) -->
       <section id="view-beranda" class="animate-view">
 
-        <!-- Hero Welcome Banner with 3D Cream/Sand Mosque & Turquoise Dome -->
-        <div class="relative bg-gradient-to-b from-[#d9eeff] via-[#e9f5ff] to-[#f4f8fc] px-5 pt-2.5 pb-6 overflow-hidden">
-          <!-- Soft Fluffy Clouds -->
-          <div class="absolute top-1 right-28 w-24 h-7 bg-white/80 rounded-full blur-[3px]"></div>
-          <div class="absolute top-5 right-3 w-20 h-6 bg-white/75 rounded-full blur-[3px]"></div>
-          <div class="absolute top-9 right-36 w-16 h-5 bg-white/65 rounded-full blur-[2px]"></div>
-
-          <!-- Photorealistic mosque PNG in greeting card -->
-          <div class="absolute right-0 bottom-0.5 w-[235px] h-[178px] pointer-events-none select-none z-0">
-            <img src="./1795608279274.png" alt="Masjid elegan" class="w-full h-full object-contain object-bottom" loading="eager" />
+        <!-- Hero Welcome Banner: photo slider background, original card sizing retained -->
+        <div class="relative px-5 pt-2.5 pb-6 overflow-hidden">
+          <!-- Two-photo background crossfade -->
+          <div class="absolute inset-0 z-0">
+            <img id="greeting-bg-a" src="./foto-sodikuna-1.jpg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-1000" />
+            <img id="greeting-bg-b" src="./foto-sodikuna-2.jpg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000" />
+            <div class="absolute inset-0 bg-gradient-to-r from-black/65 via-black/40 to-black/20"></div>
           </div>
-
-          <!-- Curved Horizon Line -->
-          <svg class="absolute bottom-0 left-0 w-full h-6 pointer-events-none" viewBox="0 0 430 26" preserveAspectRatio="none">
-            <path d="M0,19 Q215,28 430,3 L430,26 L0,26 Z" fill="#f4f8fc" />
-            <path d="M0,19 Q215,28 430,3" fill="none" stroke="#93c5fd" stroke-width="1.8" />
-          </svg>
-
           <!-- Greeting Text -->
           <div class="relative z-10 max-w-[65%]">
-            <h2 class="text-[19.5px] leading-[1.24] font-extrabold text-[#0F172A] tracking-tight">
+            <h2 class="text-[19.5px] leading-[1.24] font-extrabold text-white tracking-tight drop-shadow-lg">
               Assalamu’alaikum,<br />Jamaah Sodikuna
             </h2>
-            <p class="text-[13px] leading-[1.42] text-[#334155] font-medium mt-1.5">
+            <p class="text-[13px] leading-[1.42] text-white font-medium mt-1.5 drop-shadow-md">
               Selamat datang di aplikasi<br />Majelis Ta’lim Sodikuna.
             </p>
-
           </div>
         </div>
 
@@ -1071,6 +1060,20 @@
         toast.classList.add('hidden');
       }, 2400);
     }
+
+
+    // Greeting-card two-photo background crossfade
+    (function initGreetingBackgroundSlider(){
+      const a=document.getElementById('greeting-bg-a');
+      const b=document.getElementById('greeting-bg-b');
+      if(!a||!b)return;
+      let showingA=true;
+      setInterval(()=>{
+        if(showingA){a.style.opacity='0';b.style.opacity='1';}
+        else{a.style.opacity='1';b.style.opacity='0';}
+        showingA=!showingA;
+      },5000);
+    })();
 
     // Quote photo slideshow: preloaded cross-fade between two layers (no blank frame)
     (function initSodikunaSlider(){
