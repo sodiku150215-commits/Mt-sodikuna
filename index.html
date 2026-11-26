@@ -113,23 +113,23 @@
   <div id="app-shell" class="relative w-full max-w-[430px] h-[100dvh] sm:h-[860px] bg-[#f4f8fc] sm:rounded-[40px] sm:border-[10px] sm:border-[#1e2430] shadow-2xl overflow-hidden flex flex-col">
 
     <!-- Compact Elegant Blue Header -->
-    <header class="relative bg-gradient-to-br from-[#0B6BCB] via-[#1278DC] to-[#1982E6] text-white pt-3.5 pb-5 px-4 z-20 shrink-0">
+    <header class="relative bg-gradient-to-br from-[#0756B8] via-[#0875D5] to-[#16A1EC] text-white pt-4 pb-5 px-4 z-20 shrink-0">
       <!-- Subtle decorative radial light -->
       <div class="absolute -top-10 right-6 w-48 h-48 bg-sky-300/25 rounded-full blur-2xl pointer-events-none"></div>
 
       <div class="relative flex items-center justify-between gap-2.5">
         <!-- Left Circular Logo: YAYASAN SODIKUNA -->
         <div class="flex items-center gap-2.5">
-          <div class="w-[48px] h-[48px] rounded-full bg-white p-[2px] shadow-[0_5px_12px_rgba(4,42,88,0.30)] shrink-0 flex items-center justify-center">
+          <div class="w-[72px] h-[72px] rounded-full bg-white p-[3px] shadow-[0_5px_12px_rgba(4,42,88,0.30)] shrink-0 flex items-center justify-center">
             <img src="logo-sodikuna.png" alt="Logo Yayasan Sodikuna" class="w-full h-full object-contain" />
           </div>
 
           <!-- Header Title & Address: compact, single-line uppercase -->
           <div class="min-w-0 flex flex-col justify-center">
-            <h1 class="text-[13px] leading-tight font-bold tracking-[0.045em] text-white drop-shadow-sm whitespace-nowrap">
+            <h1 class="text-[19px] leading-tight font-extrabold tracking-[0.02em] text-white drop-shadow-sm">
               MAJELIS TA'LIM SODIKUNA
             </h1>
-            <p class="text-[8.5px] leading-snug font-medium text-[#dbeafe] mt-1">
+            <p class="text-[11px] leading-snug font-medium text-[#dbeafe] mt-1">
               Jl. Caringin, Caringin Kulon, Kec. Caringin, Kabupaten Sukabumi, Jawa Barat 43154
             </p>
           </div>
@@ -160,23 +160,41 @@
       <!-- TAB 1: BERANDA (HOME VIEW - PIXEL-ACCURATE MATCH) -->
       <section id="view-beranda" class="animate-view">
 
-        <!-- Hero Welcome Banner: photo slider background, original card sizing retained -->
-        <div class="relative px-5 pt-2.5 pb-6 overflow-hidden">
-          <!-- Two-photo background crossfade -->
-          <div class="absolute inset-0 z-0">
-            <img id="greeting-bg-a" src="./foto-sodikuna-1.jpg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-1000" />
-            <img id="greeting-bg-b" src="./foto-sodikuna-2.jpg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000" />
-            <div class="absolute inset-0 bg-gradient-to-r from-black/65 via-black/40 to-black/20"></div>
-          </div>
-          <!-- Greeting Text -->
-          <div class="relative z-10 max-w-[65%]">
-            <h2 class="text-[19.5px] leading-[1.24] font-extrabold text-white tracking-tight drop-shadow-lg">
+        <!-- Hero Welcome Banner: Blue-white wave with mosque illustration -->
+        <div class="relative mx-3 mt-2 mb-3 min-h-[218px] rounded-[22px] overflow-hidden bg-gradient-to-br from-[#eff8ff] via-[#d6f2ff] to-[#89d8fa] shadow-[0_6px_18px_rgba(12,91,170,0.18)]">
+          <div class="absolute inset-0 bg-[radial-gradient(circle_at_12%_20%,rgba(255,255,255,0.9),transparent_65%)]"></div>
+          <svg class="absolute right-0 bottom-0 h-full w-[57%]" viewBox="0 0 250 260" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+            <g opacity="0.28" fill="#5BC5F2"><circle cx="185" cy="46" r="48"/><circle cx="225" cy="85" r="26"/></g>
+            <g transform="translate(15 45)">
+              <rect x="70" y="95" width="150" height="115" rx="6" fill="#F8E6C8" stroke="#0C77C9" stroke-width="3"/>
+              <path d="M65 96 Q145 35 225 96" fill="#E5F5FF" stroke="#1685D7" stroke-width="4"/>
+              <path d="M100 98 Q145 62 190 98" fill="#FFF4DC"/>
+              <rect x="127" y="126" width="38" height="79" rx="19 19 0 0" fill="#0B78C7" stroke="#fff" stroke-width="3"/>
+              <rect x="83" y="125" width="25" height="42" rx="12" fill="#0B78C7" stroke="#fff" stroke-width="3"/>
+              <rect x="182" y="125" width="25" height="42" rx="12" fill="#0B78C7" stroke="#fff" stroke-width="3"/>
+              <g transform="translate(145 -2)">
+                <rect x="-12" y="50" width="24" height="46" fill="#F5D7A8" stroke="#0B78C7" stroke-width="3"/>
+                <path d="M-24 50 Q0 2 24 50 Z" fill="#14A5E7" stroke="#0B78C7" stroke-width="3"/>
+                <rect x="-15" y="40" width="30" height="8" rx="3" fill="#F5D7A8"/>
+                <path d="M0 0 L0 -16" stroke="#F5C24B" stroke-width="4"/>
+              </g>
+              <g transform="translate(38 92)">
+                <rect x="-8" y="20" width="16" height="78" fill="#F5D7A8" stroke="#0B78C7" stroke-width="3"/>
+                <path d="M-16 20 Q0 -10 16 20 Z" fill="#0B8DD7" stroke="#0B78C7" stroke-width="3"/>
+              </g>
+              <path d="M20 210 Q75 190 120 210 Q180 188 240 210" fill="none" stroke="#23B6E8" stroke-width="7"/>
+            </g>
+          </svg>
+          <div class="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-r from-white/95 via-white/70 to-transparent rounded-b-[22px]"></div>
+          <div class="relative z-10 p-5 max-w-[62%] flex flex-col justify-center min-h-[218px]">
+            <h2 class="text-[18px] leading-[1.22] font-extrabold text-[#082E67] tracking-tight">
               Assalamu’alaikum,<br />Jamaah Sodikuna
             </h2>
-            <p class="text-[13px] leading-[1.42] text-white font-medium mt-1.5 drop-shadow-md">
+            <p class="text-[12.5px] leading-[1.42] text-[#102F56] font-medium mt-2">
               Selamat datang di aplikasi<br />Majelis Ta’lim Sodikuna.
             </p>
           </div>
+          <svg class="absolute bottom-0 left-0 w-full h-5" viewBox="0 0 430 24" preserveAspectRatio="none" aria-hidden="true"><path d="M0 11 C95 0 250 30 430 5 L430 24 L0 24 Z" fill="#38BDF8" opacity=".7"/></svg>
         </div>
 
 
