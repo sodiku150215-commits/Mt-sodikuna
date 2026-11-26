@@ -107,28 +107,25 @@
   <!-- Mobile-First App Container -->
   <div id="app-shell" class="relative w-full max-w-[430px] h-[100dvh] sm:h-[860px] bg-[#f4f8fc] sm:rounded-[40px] sm:border-[10px] sm:border-[#1e2430] shadow-2xl overflow-hidden flex flex-col">
 
-    <!-- Top Blue Curved Header -->
-    <header class="relative bg-gradient-to-br from-[#0B6BCB] via-[#1278DC] to-[#1982E6] text-white pt-5 pb-8 px-5 z-20 shrink-0">
+    <!-- Compact Elegant Blue Header -->
+    <header class="relative bg-gradient-to-br from-[#0B6BCB] via-[#1278DC] to-[#1982E6] text-white pt-3.5 pb-5 px-4 z-20 shrink-0">
       <!-- Subtle decorative radial light -->
       <div class="absolute -top-10 right-6 w-48 h-48 bg-sky-300/25 rounded-full blur-2xl pointer-events-none"></div>
 
       <div class="relative flex items-center justify-between gap-2.5">
         <!-- Left Circular Logo: YAYASAN SODIKUNA -->
-        <div class="flex items-center gap-3">
-          <div class="w-[66px] h-[66px] rounded-full bg-white p-[3px] shadow-[0_6px_14px_rgba(4,42,88,0.35)] shrink-0 flex items-center justify-center">
+        <div class="flex items-center gap-2.5">
+          <div class="w-[58px] h-[58px] rounded-full bg-white p-[3px] shadow-[0_5px_12px_rgba(4,42,88,0.30)] shrink-0 flex items-center justify-center">
             <img src="logo-sodikuna.png" alt="Logo Yayasan Sodikuna" class="w-full h-full object-contain" />
           </div>
 
-          <!-- Header Title & Subtitle -->
-          <div>
-            <p class="text-[16.5px] leading-[1.1] font-bold tracking-tight text-white/95">
-              Majelis Ta’lim
-            </p>
-            <h1 class="text-[23px] leading-[1.1] font-extrabold tracking-tight text-white drop-shadow-sm">
-              Sodikuna
+          <!-- Header Title & Address: compact, single-line uppercase -->
+          <div class="min-w-0 flex flex-col justify-center">
+            <h1 class="text-[13px] leading-tight font-bold tracking-[0.045em] text-white drop-shadow-sm whitespace-nowrap">
+              MAJELIS TA'LIM SODIKUNA
             </h1>
-            <p class="text-[12.5px] font-medium text-[#dbeafe] mt-1 tracking-wide">
-              Caringin Sukabumi
+            <p class="text-[8.5px] leading-snug font-medium text-[#dbeafe] mt-1">
+              Jl. Caringin, Caringin Kulon, Kec. Caringin, Kabupaten Sukabumi, Jawa Barat 43154
             </p>
           </div>
         </div>
@@ -139,7 +136,7 @@
           aria-label="Notifikasi"
           class="relative p-2 rounded-full hover:bg-white/15 active:scale-90 transition cursor-pointer"
         >
-          <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="2.1" viewBox="0 0 24 24">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2.1" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
           </svg>
           <span id="notif-badge" class="absolute top-2 right-2 w-2.5 h-2.5 bg-amber-400 rounded-full ring-2 ring-[#0B6BCB]"></span>
@@ -147,8 +144,8 @@
       </div>
 
       <!-- Asymmetric Smooth Wave Curve at Bottom of Blue Header -->
-      <svg class="absolute bottom-[-1px] left-0 w-full h-7 pointer-events-none" viewBox="0 0 430 34" preserveAspectRatio="none">
-        <path d="M0,4 C115,36 265,34 430,10 L430,34 L0,34 Z" fill="#d9eeff" />
+      <svg class="absolute bottom-[-1px] left-0 w-full h-7 pointer-events-none" viewBox="0 0 430 40" preserveAspectRatio="none">
+        <path d="M0,0 C95,42 275,42 430,0 L430,40 L0,40 Z" fill="transparent" />
       </svg>
     </header>
 
@@ -158,111 +155,25 @@
       <!-- TAB 1: BERANDA (HOME VIEW - PIXEL-ACCURATE MATCH) -->
       <section id="view-beranda" class="animate-view">
 
-        <!-- Hero Welcome Banner with 3D Cream/Sand Mosque & Turquoise Dome -->
-        <div class="relative bg-gradient-to-b from-[#d9eeff] via-[#e9f5ff] to-[#f4f8fc] px-5 pt-2.5 pb-6 overflow-hidden">
-          <!-- Soft Fluffy Clouds -->
-          <div class="absolute top-1 right-28 w-24 h-7 bg-white/80 rounded-full blur-[3px]"></div>
-          <div class="absolute top-5 right-3 w-20 h-6 bg-white/75 rounded-full blur-[3px]"></div>
-          <div class="absolute top-9 right-36 w-16 h-5 bg-white/65 rounded-full blur-[2px]"></div>
-
-          <!-- Right Mosque & Lush Trees Illustration (Detailed 3D-Style SVG) -->
-          <div class="absolute right-0 bottom-0.5 w-[210px] h-[152px] pointer-events-none select-none">
-            <svg viewBox="0 0 230 168" class="w-full h-full">
-              <defs>
-                <linearGradient id="turquoiseDome" x1="0.15" y1="0.1" x2="0.85" y2="0.95">
-                  <stop offset="0%" stop-color="#38bdf8" />
-                  <stop offset="45%" stop-color="#0284c7" />
-                  <stop offset="100%" stop-color="#035388" />
-                </linearGradient>
-                <linearGradient id="creamWall" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stop-color="#fdedd5" />
-                  <stop offset="65%" stop-color="#f6d8ae" />
-                  <stop offset="100%" stop-color="#e5be8a" />
-                </linearGradient>
-                <linearGradient id="minaretGrad" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stop-color="#fff3e0" />
-                  <stop offset="60%" stop-color="#f3d2a2" />
-                  <stop offset="100%" stop-color="#d8af77" />
-                </linearGradient>
-                <radialGradient id="bushGreen" cx="35%" cy="30%" r="70%">
-                  <stop offset="0%" stop-color="#84cc16" />
-                  <stop offset="60%" stop-color="#4d7c0f" />
-                  <stop offset="100%" stop-color="#365314" />
-                </radialGradient>
-              </defs>
-
-              <!-- Lush Green Trees on Left of Mosque -->
-              <circle cx="34" cy="126" r="14" fill="url(#bushGreen)" />
-              <circle cx="52" cy="117" r="18" fill="url(#bushGreen)" />
-              <circle cx="66" cy="127" r="13" fill="#65a30d" />
-              <rect x="49" y="129" width="4.5" height="17" rx="2" fill="#713f12" />
-
-              <!-- Tall Minaret on Left of Main Dome -->
-              <rect x="78" y="46" width="15" height="98" fill="url(#minaretGrad)" />
-              <!-- Minaret Balconies -->
-              <rect x="74" y="64" width="23" height="5" rx="2.5" fill="#e2b77e" />
-              <rect x="75" y="62" width="21" height="2.5" rx="1" fill="#fff7ed" />
-              <rect x="74" y="94" width="23" height="5" rx="2.5" fill="#e2b77e" />
-              <rect x="75" y="92" width="21" height="2.5" rx="1" fill="#fff7ed" />
-              <!-- Minaret Windows -->
-              <path d="M83,82 L83,74 A2.5,2.5 0 0,1 88,74 L88,82 Z" fill="#7c5832" />
-              <!-- Minaret Turquoise Dome & Gold Spire -->
-              <path d="M77,46 C77,31 94,31 94,46 Z" fill="url(#turquoiseDome)" />
-              <line x1="85.5" y1="21" x2="85.5" y2="32" stroke="#eab308" stroke-width="2" stroke-linecap="round" />
-              <circle cx="85.5" cy="21" r="2.2" fill="#facc15" />
-
-              <!-- Main Large Turquoise Dome -->
-              <path d="M112,75 C112,35 184,35 184,75 Z" fill="url(#turquoiseDome)" />
-              <!-- Glossy Dome Specular Highlight -->
-              <path d="M124,69 C125,47 142,41 151,42 C139,45 131,55 129,70 Z" fill="#bae6fd" opacity="0.45" />
-              <!-- Gold Crescent Finial -->
-              <line x1="148" y1="22" x2="148" y2="38" stroke="#eab308" stroke-width="2.4" stroke-linecap="round" />
-              <path d="M146,19 A4,4 0 1,0 151,23 A3.2,3.2 0 1,1 146,19 Z" fill="#facc15" />
-
-              <!-- Dome Drum / Neck with Arched Windows -->
-              <rect x="110" y="74" width="76" height="13" rx="2" fill="#faebd7" stroke="#e2be8d" stroke-width="1" />
-              <path d="M118,87 L118,79 A4,4 0 0,1 126,79 L126,87 Z" fill="#0369a1" />
-              <path d="M132,87 L132,79 A4,4 0 0,1 140,79 L140,87 Z" fill="#0369a1" />
-              <path d="M146,87 L146,79 A4,4 0 0,1 154,79 L154,87 Z" fill="#0369a1" />
-              <path d="M160,87 L160,79 A4,4 0 0,1 168,79 L168,87 Z" fill="#0369a1" />
-              <path d="M174,87 L174,79 A4,4 0 0,1 182,79 L182,87 Z" fill="#0369a1" />
-
-              <!-- Left Wing Building -->
-              <rect x="68" y="99" width="44" height="45" fill="#f5d9b1" />
-              <path d="M81,144 L81,119 Q90,108 99,119 L99,144 Z" fill="#5c4738" />
-
-              <!-- Main Center Mosque Facade -->
-              <rect x="109" y="87" width="88" height="57" fill="url(#creamWall)" stroke="#e5c190" stroke-width="1" />
-              <!-- Decorative Top Parapet -->
-              <rect x="107" y="85" width="92" height="4" rx="1.5" fill="#fff6e9" />
-
-              <!-- Grand Pointed Islamic Archway -->
-              <path d="M129,144 L129,113 Q153,93 177,113 L177,144 Z" fill="#d9b17c" />
-              <path d="M135,144 L135,116 Q153,100 171,116 L171,144 Z" fill="#475569" />
-              <path d="M142,144 L142,121 Q153,109 164,121 L164,144 Z" fill="#1e293b" />
-
-              <!-- Right Side Wing -->
-              <rect x="197" y="97" width="33" height="47" fill="#ecc796" />
-              <path d="M206,144 L206,118 Q214,109 222,118 L222,144 Z" fill="#475569" />
-            </svg>
+        <!-- Hero Welcome Banner: photo slider background, original card sizing retained -->
+        <div class="relative px-5 pt-2.5 pb-6 overflow-hidden">
+          <!-- Two-photo background crossfade -->
+          <div class="absolute inset-0 z-0">
+            <img id="greeting-bg-a" src="./foto-sodikuna-1.jpg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-1000" />
+            <img id="greeting-bg-b" src="./foto-sodikuna-2.jpg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000" />
+            <div class="absolute inset-0 bg-gradient-to-r from-black/65 via-black/40 to-black/20"></div>
           </div>
-
-          <!-- Curved Horizon Line -->
-          <svg class="absolute bottom-0 left-0 w-full h-6 pointer-events-none" viewBox="0 0 430 26" preserveAspectRatio="none">
-            <path d="M0,19 Q215,28 430,3 L430,26 L0,26 Z" fill="#f4f8fc" />
-            <path d="M0,19 Q215,28 430,3" fill="none" stroke="#93c5fd" stroke-width="1.8" />
-          </svg>
-
           <!-- Greeting Text -->
           <div class="relative z-10 max-w-[65%]">
-            <h2 class="text-[19.5px] leading-[1.24] font-extrabold text-[#0F172A] tracking-tight">
+            <h2 class="text-[19.5px] leading-[1.24] font-extrabold text-white tracking-tight drop-shadow-lg">
               Assalamu’alaikum,<br />Jamaah Sodikuna
             </h2>
-            <p class="text-[13px] leading-[1.42] text-[#334155] font-medium mt-1.5">
+            <p class="text-[13px] leading-[1.42] text-white font-medium mt-1.5 drop-shadow-md">
               Selamat datang di aplikasi<br />Majelis Ta’lim Sodikuna.
             </p>
           </div>
         </div>
+
 
         <!-- 2x3 Feature Menu Grid (Pixel-Accurate 3D Glossy / Clay Render Cards) -->
         <div class="px-5 pt-2">
@@ -619,81 +530,36 @@
           </div>
         </div>
 
-        <!-- Bottom Quote Card Banner with Grand Blue Mosque & Twin Minarets -->
+        <!-- Bottom Quote Card Banner: full photo background slideshow -->
         <div class="px-5 mt-5">
-          <div class="relative rounded-[22px] bg-gradient-to-r from-[#0D5CAB] via-[#1b74cf] to-[#7cc0f8] p-5 text-white shadow-[0_10px_22px_-6px_rgba(13,92,171,0.45)] overflow-hidden">
-            <!-- Soft Clouds behind Mosque -->
-            <div class="absolute top-2 right-24 w-16 h-4 bg-white/40 rounded-full blur-[2px]"></div>
-            <div class="absolute top-5 right-4 w-14 h-4 bg-white/45 rounded-full blur-[2px]"></div>
-
-            <!-- Grand Blue Mosque Illustration on Right Side -->
-            <div class="absolute right-0 bottom-0 w-[180px] h-[135px] pointer-events-none">
-              <svg viewBox="0 0 210 155" class="w-full h-full">
-                <defs>
-                  <linearGradient id="quoteMainDome" x1="0.1" y1="0.1" x2="0.9" y2="0.95">
-                    <stop offset="0%" stop-color="#38bdf8" />
-                    <stop offset="55%" stop-color="#0284c7" />
-                    <stop offset="100%" stop-color="#07438a" />
-                  </linearGradient>
-                </defs>
-
-                <!-- Left Pointed Minaret -->
-                <rect x="64" y="54" width="10" height="96" fill="#dceaf9" />
-                <rect x="62" y="72" width="14" height="3.5" rx="1.5" fill="#b4d2f2" />
-                <path d="M63,54 C63,41 75,41 75,54 Z" fill="url(#quoteMainDome)" />
-                <line x1="69" y1="34" x2="69" y2="43" stroke="#facc15" stroke-width="1.6" />
-
-                <!-- Right Pointed Minaret -->
-                <rect x="184" y="54" width="10" height="96" fill="#cfe2f7" />
-                <rect x="182" y="72" width="14" height="3.5" rx="1.5" fill="#a5c7ed" />
-                <path d="M183,54 C183,41 195,41 195,54 Z" fill="url(#quoteMainDome)" />
-                <line x1="189" y1="34" x2="189" y2="43" stroke="#facc15" stroke-width="1.6" />
-
-                <!-- Main Large Blue Dome -->
-                <path d="M90,68 C90,26 168,26 168,68 Z" fill="url(#quoteMainDome)" />
-                <path d="M102,63 C104,42 120,36 129,37 C118,40 110,50 108,64 Z" fill="#bae6fd" opacity="0.4" />
-                <!-- Gold Crescent Spire -->
-                <line x1="129" y1="15" x2="129" y2="30" stroke="#facc15" stroke-width="2" />
-                <circle cx="129" cy="14" r="2.3" fill="#fde047" />
-
-                <!-- Dome Drum -->
-                <rect x="87" y="67" width="84" height="10" fill="#e6f0fb" />
-
-                <!-- Mosque Facade Body -->
-                <rect x="76" y="77" width="106" height="78" fill="#f1f7fe" />
-                <rect x="52" y="96" width="24" height="59" fill="#dceaf9" />
-                <rect x="182" y="96" width="24" height="59" fill="#cfe2f7" />
-
-                <!-- Layered Grand Archway Entrance -->
-                <path d="M97,155 L97,112 Q129,85 161,112 L161,155 Z" fill="#9bc0e8" />
-                <path d="M105,155 L105,116 Q129,94 153,116 L153,155 Z" fill="#3a6ea5" />
-                <path d="M114,155 L114,122 Q129,106 144,122 L144,155 Z" fill="#1d4470" />
-
-                <!-- Side Arched Windows -->
-                <path d="M60,136 L60,118 A4.5,4.5 0 0,1 69,118 L69,136 Z" fill="#4f83bd" />
-                <path d="M189,136 L189,118 A4.5,4.5 0 0,1 198,118 L198,136 Z" fill="#4f83bd" />
-              </svg>
+          <div class="relative rounded-[22px] p-5 text-white shadow-[0_10px_22px_-6px_rgba(13,92,171,0.45)] overflow-hidden min-h-[184px]">
+            <div id="sodikuna-photo-slider" style="position:absolute;inset:0;z-index:2;overflow:hidden;" aria-label="Foto latar Majelis Ta'lim Sodikuna">
+              <img id="sodikuna-slider-a" src="./foto-sodikuna-1.jpg" alt="Foto latar Sodikuna" loading="eager" decoding="async" style="position:absolute;top:0;left:0;z-index:2;width:100%;height:100%;object-fit:cover;opacity:1;transition:opacity 1100ms ease-in-out;" />
+              <img id="sodikuna-slider-b" src="./foto-sodikuna-1.jpg" alt="" aria-hidden="true" loading="eager" decoding="async" style="position:absolute;top:0;left:0;z-index:3;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1100ms ease-in-out;" />
             </div>
 
-            <!-- Quote Content -->
-            <div class="relative z-10 max-w-[67%]">
-              <!-- Large White Double Quote Icon -->
-              <svg class="w-8 h-8 text-white mb-1 drop-shadow-sm" fill="currentColor" viewBox="0 0 24 24">
+            <div style="position:absolute;top:0;right:0;bottom:0;left:0;z-index:4;background:linear-gradient(90deg,rgba(6,59,118,.20),rgba(7,91,165,.10),rgba(6,68,122,.05));pointer-events:none;"></div>
+            <div class="relative z-10 w-full pr-1" style="position:relative;z-index:5;">
+              <svg class="w-8 h-8 text-white mb-1 drop-shadow-sm" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z" />
               </svg>
-              <h3 class="text-[14.5px] font-extrabold italic tracking-tight text-white">
+              <h3 class="text-[14.5px] font-extrabold italic tracking-tight text-white drop-shadow-md">
                 Majelis Ta’lim Sodikuna
               </h3>
-              <p class="text-[12.5px] leading-[1.45] font-medium text-white/95 mt-1">
+              <p class="text-[12.5px] leading-[1.45] font-medium text-white mt-1 drop-shadow-md">
                 Tempat Menuntut Ilmu,<br />
                 Mempererat Ukhuwah,<br />
                 dan Meningkatkan<br />
                 Ketaqwaan.”
               </p>
             </div>
+            <div class="absolute z-20 bottom-2.5 left-0 right-0 flex justify-center items-center gap-1.5" style="z-index:6;" aria-label="Indikator foto">
+              <span class="sodikuna-slide-dot" style="width:6px;height:6px;border-radius:999px;background:white;opacity:1;"></span>
+              <span class="sodikuna-slide-dot" style="width:6px;height:6px;border-radius:999px;background:white;opacity:.5;"></span>
+              <span class="sodikuna-slide-dot" style="width:6px;height:6px;border-radius:999px;background:white;opacity:.5;"></span>
+            </div>
           </div>
         </div>
-      </section>
 
       <!-- TAB 2: MATERI (KAJIAN & DZIKIR HUB) -->
       <section id="view-materi" class="hidden animate-view px-5 pt-4 space-y-4">
@@ -1191,6 +1057,41 @@
         toast.classList.add('hidden');
       }, 2400);
     }
+
+
+    // Greeting-card two-photo background crossfade
+    (function initGreetingBackgroundSlider(){
+      const a=document.getElementById('greeting-bg-a');
+      const b=document.getElementById('greeting-bg-b');
+      if(!a||!b)return;
+      let showingA=true;
+      setInterval(()=>{
+        if(showingA){a.style.opacity='0';b.style.opacity='1';}
+        else{a.style.opacity='1';b.style.opacity='0';}
+        showingA=!showingA;
+      },5000);
+    })();
+
+    // Quote photo slideshow: preloaded cross-fade between two layers (no blank frame)
+    (function initSodikunaSlider(){
+      const first=document.getElementById('sodikuna-slider-a');
+      const second=document.getElementById('sodikuna-slider-b');
+      const dots=document.querySelectorAll('.sodikuna-slide-dot');
+      if(!first||!second)return;
+      const photos=['./foto-sodikuna-1.jpg','./foto-sodikuna-2.jpg','./foto-sodikuna-3.jpg'];
+      photos.forEach(src=>{const preload=new Image();preload.src=src;});
+      let active=0,showFirst=true;
+      setInterval(()=>{
+        const nextIndex=(active+1)%photos.length;
+        const incoming=showFirst?second:first;
+        const outgoing=showFirst?first:second;
+        incoming.onload=()=>{incoming.style.opacity='1';outgoing.style.opacity='0';};
+        incoming.src=photos[nextIndex];
+        if(incoming.complete&&incoming.naturalWidth>0){incoming.style.opacity='1';outgoing.style.opacity='0';}
+        active=nextIndex;showFirst=!showFirst;
+        dots.forEach((dot,i)=>dot.style.opacity=i===active?'1':'.5');
+      },5000);
+    })();
 
     // Initialize
     renderMateriTab();
