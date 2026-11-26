@@ -146,9 +146,17 @@
         </button>
       </div>
 
-      <!-- Asymmetric Smooth Wave Curve at Bottom of Blue Header -->
-      <svg class="absolute bottom-[-1px] left-0 w-full h-9 pointer-events-none" viewBox="0 0 430 40" preserveAspectRatio="none">
-        <path d="M0,0 C95,42 275,42 430,0 L430,40 L0,40 Z" fill="transparent" />
+      <!-- H2: Islamic geometric pattern + gold curved accent, transparent transition to greeting photos -->
+      <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 430 150" preserveAspectRatio="none">
+        <defs>
+          <pattern id="headerIslamicPattern" width="44" height="44" patternUnits="userSpace" patternTransform="translate(0 0)">
+            <path d="M22 2 L30 10 L42 22 L30 34 L22 42 L14 34 L2 22 L14 10 Z M22 10 L34 22 L22 34 L10 22 Z" fill="none" stroke="#8bd4ff" stroke-width="1" opacity=".20"/>
+            <circle cx="22" cy="22" r="3" fill="#8bd4ff" opacity=".16"/>
+          </pattern>
+        </defs>
+        <rect x="165" y="0" width="265" height="150" fill="url(#headerIslamicPattern)" opacity=".9"/>
+        <path d="M0 126 C100 154 268 153 430 124" fill="none" stroke="#f6c64a" stroke-width="4" opacity=".95"/>
+        <path d="M0 132 C100 160 268 159 430 130" fill="none" stroke="#ffd86a" stroke-width="1.5" opacity=".8"/>
       </svg>
     </header>
 
